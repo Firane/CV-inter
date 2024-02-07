@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV interactif - Gaël Querharo</title>
+    <script
+      src="https://kit.fontawesome.com/caa96f4471.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="websiteContainer">
+      <header>
+        <nav class="nav">
+          <div class="nav__name" id="name">Gaël Querharo</div>
+          <div class="nav__links">
+            <a href="" id="skills" class="nav__links__clickable">Compétences</a>
+            <a href="" id="experiences" class="nav__links__clickable"
+              >Expériences</a
+            >
+            <a href="" id="about" class="nav__links__clickable">A propos</a>
+            <a href="" id="contact" class="nav__links__clickable"
+              >Contactez moi</a
+            >
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="introducing">
+          <div class="introducing__content">
+            <h1 class="introducing__content__title">
+              Bonjour, je suis Gaël
+              <span class="introducing__content__title__emote">👋</span>
+            </h1>
+            <p class="introducing__content__description">
+              Jeune diplomé d'un parcours d'intégrateur web. 💻 <br />J'ai une
+              expérience dans la réalisation d'application web via HTML / CSS /
+              JS / Node.js / React. Développeur web junior, je cherche à
+              m'améliorer et à me professionnaliser.
+            </p>
+          </div>
+          <div class="introducing__illustration" id="hatcontainer">
+            <img src="./images/diplome.png" alt="Toque de diplomé" id="party" />
+          </div>
+        </section>
+        <div class="splitter"></div>
+        <section class="skills">
+          <div class="skills__content">
+            <h2 class="skills__content__title">
+              Concernant mes compétences... 📃<span
+                class="skills__content__title__pen"
+                ><span id="shaking">🖍️</span></span
+              >
+            </h2>
+            <div class="skills__content__langages">
+              Je suis capable d'utiliser les 3 languages suivants :
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+              </ul>
+            </div>
+            <div class="skills__content__tools">
+              J'ai également réalisé des projets a l'aide des outils suivants :
+              <ul>
+                <li>Sass</li>
+                <li>NodeJS (Express, Mongoose)</li>
+                <li>React</li>
+              </ul>
+            </div>
+            <div class="skills__content__plus">
+              J'en profite également pour préciser que je programmme avec le
+              logiciel Visual Studio Code, et que j'ai déjà, a plusieurs
+              reprises héberger des projets sur Github (avec gestion de branche
+              notamment).
+            </div>
+          </div>
+          <div class="skills__illustration">
+            <div class="skills__illustration__logos">
+              <img src="./images/732212.png" alt="logo html" />
+              <img src="./images/663980.png" alt="logo css" />
+              <img src="./images/logojs.png" alt="logo javascript" />
+              <img
+                src="./images/1280px-Sass_Logo_Color.svg.png"
+                alt="logo Sass"
+              />
+              <img src="./images/2560px-Node.js_logo.svg.png" alt="logo Node" />
+              <img src="./images/React-icon.svg.png" alt="logo React" />
+              <img src="./images/25231.png" alt="logo Github" />
+            </div>
+            <div class="skills__illustration__image">
+              <img
+                src="./images/code-8012054_12802.png"
+                alt="Dessin d'un IDE"
+              />
+            </div>
+          </div>
+        </section>
+        <div class="splitter"></div>
+      </main>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+@keyframes rotateThisHand {
+  0% {
+    transform: rotate(-10deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes moveThisPen {
+  0% {
+    transform: translate(-82%, -50%);
+  }
+  10% {
+    transform: translate(-52%, -50%);
+  }
+  18% {
+    transform: translate(-82%, -43%);
+  }
+  26% {
+    transform: translate(-52%, -43%);
+  }
+  34% {
+    transform: translate(-82%, -36%);
+  }
+  42% {
+    transform: translate(-52%, -36%);
+  }
+  50% {
+    transform: translate(-82%, -29%);
+  }
+  58% {
+    transform: translate(-52%, -29%);
+  }
+  62% {
+    transform: translate(0, 0);
+  }
+  90% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-82%, -50%);
+  }
+}
+
+@keyframes shakeThisPen {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(2deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

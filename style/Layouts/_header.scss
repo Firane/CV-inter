@@ -1,0 +1,23 @@
+@import "../Utils/variables";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  &__name {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  &__links {
+    display: flex;
+    &__clickable {
+      padding: 1rem;
+      &:hover {
+        background: $color-secondary;
+        color: $color-primary;
+      }
+    }
+  }
+}

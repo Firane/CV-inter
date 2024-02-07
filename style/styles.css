@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #5ebec4;
+}
+
+body {
+  background: #fdf5df;
+  margin: 2rem auto 2rem auto;
+  max-width: 1200px;
+  width: 95%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+}
+.nav__name {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.nav__links {
+  display: flex;
+}
+.nav__links__clickable {
+  padding: 1rem;
+}
+.nav__links__clickable:hover {
+  background: #5ebec4;
+  color: #fdf5df;
+}
+
+@keyframes rotateThisHand {
+  0% {
+    transform: rotate(-10deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes moveThisPen {
+  0% {
+    transform: translate(-82%, -50%);
+  }
+  10% {
+    transform: translate(-52%, -50%);
+  }
+  18% {
+    transform: translate(-82%, -43%);
+  }
+  26% {
+    transform: translate(-52%, -43%);
+  }
+  34% {
+    transform: translate(-82%, -36%);
+  }
+  42% {
+    transform: translate(-52%, -36%);
+  }
+  50% {
+    transform: translate(-82%, -29%);
+  }
+  58% {
+    transform: translate(-52%, -29%);
+  }
+  62% {
+    transform: translate(0, 0);
+  }
+  90% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-82%, -50%);
+  }
+}
+@keyframes shakeThisPen {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(2deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.splitter {
+  width: 100%;
+  background: #f92c85;
+  height: 2px;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.confetti {
+  height: 10px;
+  width: 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  animation-timing-function: cubic-bezier(1, 0, 0.96, 0.61);
+  opacity: 0;
+}
+
+.introducing {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+}
+.introducing__content {
+  width: 70%;
+}
+.introducing__content__title {
+  font-size: 4rem;
+  position: relative;
+}
+.introducing__content__title__emote {
+  padding-bottom: 0.3rem;
+  font-size: 3.3rem;
+  display: inline-block;
+  transform-origin: bottom right;
+  animation: rotateThisHand 1.2s ease-in-out infinite;
+  position: absolute;
+  bottom: 7px;
+}
+.introducing__content__description {
+  font-size: 1.8rem;
+}
+.introducing__illustration {
+  width: 30%;
+  position: relative;
+}
+.introducing__illustration:hover {
+  cursor: grab;
+}
+.introducing__illustration > img {
+  width: 100%;
+  transform: rotate(30deg);
+}
+
+.skills {
+  display: flex;
+  flex-direction: row-reverse;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  font-size: 1.3rem;
+}
+.skills__content {
+  width: 70%;
+  text-align: right;
+}
+.skills__content__title {
+  font-size: 2.8rem;
+  margin-top: 0;
+}
+.skills__content__title__pen {
+  display: inline-block;
+  animation: moveThisPen 4s both ease-in-out infinite;
+}
+.skills__content__title__pen > span {
+  display: inline-block;
+  animation: shakeThisPen 0.2s both ease-in-out infinite;
+  transform-origin: top right;
+}
+.skills__content__title__pen > span.animation__paused {
+  animation-play-state: paused;
+}
+.skills__content__langages > ul {
+  list-style-position: inside;
+  direction: rtl;
+  padding-right: 0;
+}
+.skills__content__tools > ul {
+  list-style-position: inside;
+  direction: rtl;
+  padding-right: 0;
+}
+.skills__content__plus {
+  font-size: 1rem;
+  font-style: italic;
+}
+.skills__illustration {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  width: 30%;
+}
+.skills__illustration__logos {
+  text-align: center;
+}
+.skills__illustration__logos > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 35px;
+}
+.skills__illustration__image > img {
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */

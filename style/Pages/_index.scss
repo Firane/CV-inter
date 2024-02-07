@@ -1,0 +1,120 @@
+@import "../Utils/animations";
+@import "../Utils/variables";
+
+.splitter {
+  width: 100%;
+  background: $color-tertiary;
+  height: 2px;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.confetti {
+  height: 10px;
+  width: 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  animation-timing-function: cubic-bezier(1, 0, 0.96, 0.61);
+  opacity: 0;
+}
+
+.introducing {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  column-gap: 5rem;
+  &__content {
+    width: 70%;
+    &__title {
+      font-size: 4rem;
+      position: relative;
+      &__emote {
+        padding-bottom: 0.3rem;
+        font-size: 3.3rem;
+        display: inline-block;
+        transform-origin: bottom right;
+        animation: rotateThisHand 1.2s ease-in-out infinite;
+        position: absolute;
+        bottom: 7px;
+      }
+    }
+    &__description {
+      font-size: 1.8rem;
+    }
+  }
+  &__illustration {
+    width: 30%;
+    position: relative;
+    &:hover {
+      cursor: grab;
+    }
+    & > img {
+      width: 100%;
+      transform: rotate(30deg);
+    }
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: row-reverse;
+  column-gap: 4rem;
+  font-size: 1.3rem;
+  &__content {
+    width: 70%;
+    text-align: right;
+    &__title {
+      font-size: 2.8rem;
+      margin-top: 0;
+      &__pen {
+        display: inline-block;
+        animation: moveThisPen 4s both ease-in-out infinite;
+        & > span {
+          display: inline-block;
+          animation: shakeThisPen 0.2s both ease-in-out infinite;
+          transform-origin: top right;
+          &.animation__paused {
+            animation-play-state: paused;
+          }
+        }
+      }
+    }
+    &__langages {
+      & > ul {
+        list-style-position: inside;
+        direction: rtl;
+        padding-right: 0;
+      }
+    }
+    &__tools {
+      & > ul {
+        list-style-position: inside;
+        direction: rtl;
+        padding-right: 0;
+      }
+    }
+    &__plus {
+      font-size: 1rem;
+      font-style: italic;
+    }
+  }
+  &__illustration {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    width: 30%;
+    &__logos {
+      text-align: center;
+      & > img {
+        object-fit: cover;
+        height: 35px;
+      }
+    }
+    &__image {
+      & > img {
+        width: 100%;
+      }
+    }
+  }
+}

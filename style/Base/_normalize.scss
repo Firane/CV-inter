@@ -1,0 +1,21 @@
+@import "../Utils/variables";
+
+* {
+  box-sizing: border-box;
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $color-secondary;
+}
+
+body {
+  background: $color-primary;
+  margin: 2rem auto 2rem auto;
+  max-width: 1200px;
+  width: 95%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
