@@ -1,5 +1,6 @@
 @import "../Utils/animations";
 @import "../Utils/variables";
+@import "../Utils/mixins";
 
 .splitter {
   width: 100%;
@@ -15,7 +16,6 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  animation-timing-function: cubic-bezier(1, 0, 0.96, 0.61);
   opacity: 0;
 }
 
@@ -24,8 +24,15 @@
   display: flex;
   align-items: center;
   column-gap: 5rem;
+  @include smartphone {
+    flex-direction: column;
+    margin-top: 2.5rem;
+  }
   &__content {
     width: 70%;
+    @include smartphone {
+      width: 98%;
+    }
     &__title {
       font-size: 4rem;
       position: relative;
@@ -46,45 +53,79 @@
   &__illustration {
     width: 30%;
     position: relative;
+    @include smartphone {
+      width: 98%;
+      margin-top: 2rem;
+    }
     &:hover {
       cursor: grab;
     }
     & > img {
       width: 100%;
       transform: rotate(30deg);
+      @include smartphone {
+        transform: rotate(0deg);
+      }
+    }
+    & > figcaption {
+      font-size: 0.7rem;
+      margin-top: 2rem;
+      transform: rotate(30deg);
+      @include smartphone {
+        transform: rotate(0deg);
+      }
     }
   }
 }
 
 .skills {
-  display: flex;
-  flex-direction: row-reverse;
-  column-gap: 4rem;
-  font-size: 1.3rem;
+  & > div {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 4rem;
+    font-size: 1.15rem;
+    @include smartphone {
+      flex-direction: column;
+    }
+  }
+  &__title {
+    margin-top: 0;
+    text-align: right;
+    @include smartphone {
+      text-align: center;
+    }
+    &__emojis {
+      @include smartphone {
+        display: block;
+      }
+    }
+    &__pen {
+      display: inline-block;
+      animation: moveThisPen 4s both ease-in-out infinite;
+      & > span {
+        display: inline-block;
+        animation: shakeThisPen 0.2s both ease-in-out infinite;
+        transform-origin: top right;
+        &.animation__paused {
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
   &__content {
     width: 70%;
     text-align: right;
-    &__title {
-      font-size: 2.8rem;
-      margin-top: 0;
-      &__pen {
-        display: inline-block;
-        animation: moveThisPen 4s both ease-in-out infinite;
-        & > span {
-          display: inline-block;
-          animation: shakeThisPen 0.2s both ease-in-out infinite;
-          transform-origin: top right;
-          &.animation__paused {
-            animation-play-state: paused;
-          }
-        }
-      }
+    @include smartphone {
+      width: 98%;
     }
     &__langages {
       & > ul {
         list-style-position: inside;
         direction: rtl;
         padding-right: 0;
+        @include smartphone {
+          direction: ltr;
+        }
       }
     }
     &__tools {
@@ -92,10 +133,13 @@
         list-style-position: inside;
         direction: rtl;
         padding-right: 0;
+        @include smartphone {
+          direction: ltr;
+        }
       }
     }
     &__plus {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-style: italic;
     }
   }
@@ -104,6 +148,13 @@
     flex-direction: column-reverse;
     justify-content: space-evenly;
     width: 30%;
+    @include smartphone {
+      width: 98%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      flex-direction: column-reverse;
+      row-gap: 1.5rem;
+    }
     &__logos {
       text-align: center;
       & > img {
@@ -114,7 +165,189 @@
     &__image {
       & > img {
         width: 100%;
+        @include smartphone {
+          width: 80%;
+        }
       }
     }
   }
+}
+
+.experience {
+  & > div {
+    display: flex;
+    align-items: center;
+    column-gap: 5rem;
+    @include smartphone {
+      flex-direction: column;
+    }
+  }
+  &__content {
+    width: 65%;
+    font-size: 1.15rem;
+    @include smartphone {
+      width: 98%;
+    }
+    & > ol {
+      margin-left: 0px;
+      padding-left: 1rem;
+      & > li {
+        @include smartphone {
+          margin-bottom: 1rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+  &__illustration {
+    @include smartphone {
+      margin-top: 2rem;
+    }
+    &__attackscontainer {
+      margin-bottom: 0.1rem;
+      background: white;
+      padding: 0.3rem;
+      border: 3px #215fbb solid;
+      border-radius: 3px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      &__buttonscontainer {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 0.5rem;
+        & > button {
+          width: 49%;
+          font-family: "VT323", monospace;
+          font-size: 1.2rem;
+          background: white;
+          color: black;
+          display: flex;
+          justify-content: center;
+          column-gap: 0.3rem;
+          align-items: center;
+          & > i {
+            display: none;
+          }
+          &:hover {
+            background: grey;
+            & > i {
+              display: inline;
+              color: black;
+              animation: blink 0.8s both ease-in-out infinite;
+            }
+          }
+        }
+      }
+      &__textused {
+        color: black;
+        font-family: "VT323", monospace;
+        display: none;
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+        text-align: left;
+        font-size: 1.35rem;
+      }
+      &__effects {
+        color: black;
+        font-family: "VT323", monospace;
+        display: none;
+        margin-top: 1rem;
+        text-align: left;
+        margin-left: 0.5rem;
+        font-size: 1.35rem;
+      }
+    }
+    &__expcontainer {
+      background: black;
+      position: relative;
+      width: 300px;
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: 4px solid black;
+      & > h3 {
+        color: yellow;
+        font-weight: 600;
+        margin: 0;
+        font-family: "VT323", monospace;
+        font-size: 1.5rem;
+      }
+      &__bar {
+        border-radius: 3px;
+        background: #cccaa7;
+        width: 200px;
+        height: 12px;
+        position: relative;
+        // position: absolute;
+        // top: 7px;
+        // left: 35px;
+        &__blue {
+          position: relative;
+          background: #5abedf;
+          border-radius: 3px;
+          width: 0%;
+          height: 100%;
+          z-index: 2;
+        }
+        &__separators {
+          display: flex;
+          justify-content: space-evenly;
+          position: absolute;
+          top: 0px;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+          &__element {
+            position: relative;
+            background: #adb693;
+            height: 100%;
+            width: 2px;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about {
+  column-gap: 5rem;
+  & > h2 {
+    text-align: right;
+    @include smartphone {
+      text-align: center;
+    }
+  }
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    text-align: right;
+    @include smartphone {
+      flex-direction: column;
+    }
+  }
+  &__content {
+    font-size: 1.15rem;
+    width: 70%;
+    @include smartphone {
+      width: 98%;
+    }
+  }
+  &__illustration {
+    & > img {
+      border-radius: 50px;
+      @include smartphone {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+.reset {
+  width: 0%;
 }

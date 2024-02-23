@@ -72,3 +72,33 @@
     transform: rotate(0);
   }
 }
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes menuSpawn {
+  0% {
+    margin: 0rem 0rem -15rem 0rem;
+  }
+  100% {
+    margin: 1.5rem 0rem 0rem 0rem;
+  }
+}
+
+@keyframes menuFade {
+  0% {
+    margin: 1.5rem 0rem 0rem 0rem;
+  }
+  100% {
+    margin: 0rem 0rem -15rem 0rem;
+  }
+}

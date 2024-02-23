@@ -2,6 +2,11 @@ const shakingPen = document.getElementById("shaking");
 const hat = document.querySelector("#party");
 let confettisAmount = document.querySelectorAll(".confetti");
 let confettisColor = ["#FDB414", "#0A7276", "#DC2129"];
+let xpPercent = 0;
+let buttonsThatGiveXp = [attackHtml, attackCss, attackJavascript];
+let allAttacksButtons = [...buttonsThatGiveXp, attackTrempette];
+const lines = document.querySelector(".nav__lines");
+let LinesState = false;
 
 // ShakingPen c'est pour recup l'emoji stylo, hat recup le chapeau, confettisAmount determine le nombre de confettis afficher a lecran,
 // je l'utilise plus tard pour savoir si on peut relancer un generateur de confetti sans faire ramer le site.
@@ -48,7 +53,7 @@ const manyConfettis = () => {
           (hatcontainer.getBoundingClientRect().y +
             hatcontainer.getBoundingClientRect().height / 2)
         ) + Math.round(Math.random() * -1000);
-      console.log(numberY);
+      let rotation = Math.round(Math.random() * 50) - 25;
       // ces deux variables me servent a déterminer la position x et y pour le translate de chaque confettis, elle comprend, en premier lieu le décalage nécessaire pour
       // la position de départ, c'est a dire la position du CENTRE X et CENTRE Y du chapeau sur la page. Etant donné que chaque confettis est positionné en fixed,
       // dû a ma volonté de les faire rester sur l'écran sans tenir compte du scrolling actuel. Elles vont donc apparaitre de base au centre (x et y) de l'écran.
@@ -78,9 +83,7 @@ const manyConfettis = () => {
               opacity: 1,
             },
             {
-              transform: `translate(${numberX}px, ${numberY}px) rotate(${
-                Math.round(Math.random() * 198) - 99
-              }deg)`,
+              transform: `translate(${numberX}px, ${numberY}px) rotate(${rotation}deg)`,
               opacity: 1,
             },
           ],
@@ -94,35 +97,33 @@ const manyConfettis = () => {
       // Ici je détermine d'abord la position centrale du chapeau dynamiquement, pour ensuite les décaller, chacunes individuellement de cette position a cette postion + nombre random.
       // Le cubic bezier renforce la dynamique de ralentissement de la conffetis avant la retombé
       const makeThemFall = () => {
-        let numberMaxY =
-          1000 +
-          (window.innerHeight / 2 -
-            (hatcontainer.getBoundingClientRect().y +
-              hatcontainer.getBoundingClientRect().height / 2));
-        // console.log(numberMaxY);
-        // console.log(numberMaxY - (numberMaxY + numberY));
-        // let vitesseDeChute = numberMaxY / 6;
-        let vitesseDeChute = 300;
-        let fallDuration = Math.abs(numberY) / vitesseDeChute;
-        console.log(fallDuration / 6);
+        // let numberMaxY =
+        //   1000 +
+        //   (window.innerHeight / 2 -
+        //     (hatcontainer.getBoundingClientRect().y +
+        //       hatcontainer.getBoundingClientRect().height / 2));
+        // Ca c'est pour avoir la hauteur max d'une confetti, si on voudrait faire une vitesse de chute dynamique a la hauteur de la fenetre
+        console.log(confetti.getBoundingClientRect().y);
+        let vitesseDeChute = 500;
+        let fallDuration =
+          ((window.innerHeight - confetti.getBoundingClientRect().y) /
+            vitesseDeChute) *
+          1000;
         confetti.animate(
           [
             {
-              transform: `translate(${numberX}px, ${
-                window.innerHeight / 2 - 10
-              }px) rotate(${confettiFallingRotation}deg)`,
-              offset: fallDuration / 6,
+              transform: `translate(${numberX}px, ${numberY}px) rotate(${rotation}deg)`,
               opacity: 1,
             },
             {
               transform: `translate(${numberX}px, ${
                 window.innerHeight / 2 - 10
-              }px) rotate(${confettiFallingRotation}deg)`,
-              offset: 1,
+              }px) rotate(${rotation + 4 * rotation}deg)`,
+              opacity: 1,
             },
           ],
           {
-            duration: 6000,
+            duration: fallDuration,
             fill: "forwards",
             easing: "linear",
           }
@@ -152,4 +153,181 @@ const manyConfettis = () => {
   };
   setTimeout(deleteConfettis, 7000);
   setTimeout(checkConfettisPosition, 2000);
+
+  // Ici je creer une fonction qui delete les confettis sorti lateralement de l'ecran.
+  // Je fais une autre fonction me permettant de delete les confettis existantes. Je delete les confettis au bout de 7s.
 };
+
+for (i = 0; i < buttonsThatGiveXp.length; i++) {
+  buttonsThatGiveXp[i].addEventListener("click", (e) => {
+    xpPercentProgress();
+  });
+}
+// attackHtml.addEventListener("click", (e) => {});
+
+const xpPercentProgress = () => {
+  if (xpPercent >= 100 - 30) {
+    bluebar.animate(
+      [
+        {
+          width: `100%`,
+        },
+      ],
+      {
+        duration: 1000,
+        fill: "forwards",
+        easing: "linear",
+      }
+    );
+    let left = xpPercent + 30 - 100;
+    xpPercent = 0;
+    xpPercent += left;
+    setTimeout(() => {
+      let blue = setInterval(() => {
+        xpbar.style.border = "4px solid #215fbb";
+      }, 200);
+      let black = setInterval(() => {
+        xpbar.style.border = "4px solid black";
+      }, 400);
+      setTimeout(() => {
+        clearInterval(blue), clearInterval(black);
+      }, 2000);
+    }, 2000);
+    setTimeout(() => {
+      bluebar.style.display = `none`;
+      bluebar.animate(
+        [
+          {
+            width: `0%`,
+          },
+        ],
+        {
+          duration: 1000,
+          fill: "forwards",
+          easing: "linear",
+        }
+      );
+    }, 3000);
+    setTimeout(() => {
+      bluebar.style.display = `block`;
+      bluebar.animate(
+        [
+          {
+            width: `${xpPercent}%`,
+          },
+        ],
+        {
+          duration: 1000,
+          fill: "forwards",
+          easing: "linear",
+        }
+      );
+    }, 4000);
+  } else {
+    xpPercent += 30;
+    bluebar.animate(
+      [
+        {
+          width: `${xpPercent}%`,
+        },
+      ],
+      {
+        duration: 1000,
+        fill: "forwards",
+        easing: "linear",
+      }
+    );
+  }
+  console.log(xpPercent);
+};
+
+for (i = 0; i < allAttacksButtons.length; i++) {
+  allAttacksButtons[i].addEventListener("click", (e) => {
+    if (e.target.value === undefined) {
+      return;
+    } else {
+      showAttackUsed(e.target.value);
+    }
+  });
+}
+
+function doSetTimeOut(i, textPart, attackText, textTimer) {
+  setTimeout(function () {
+    textPart.textContent += attackText[i];
+  }, textTimer);
+}
+
+const showAttackUsed = (attackName) => {
+  let attacksContainer = document.querySelector(
+    ".experience__illustration__attackscontainer__buttonscontainer"
+  );
+  let textUsed = document.querySelector(
+    ".experience__illustration__attackscontainer__textused"
+  );
+  let textEffect = document.querySelector(
+    ".experience__illustration__attackscontainer__effects"
+  );
+  attacksContainer.style.display = "none";
+  textUsed.style.display = "block";
+  let attackText = `Vous avez utilisé ${attackName}...`.split("");
+  let effectText = "C'est super efficace !".split("");
+  let altEffectText = "Mais rien ne se passe.".split("");
+  let textTimer = 0;
+  console.log(attackText);
+  for (i = 0; i < attackText.length; i++) {
+    textTimer += 100;
+    doSetTimeOut(i, textUsed, attackText, textTimer);
+  }
+
+  setTimeout(
+    () => {
+      console.log(textUsed);
+      textTimer = 0;
+      textUsed.textContent = "";
+      textUsed.style.display = "none";
+      textEffect.style.display = "block";
+      if (attackName === "trempette") {
+        console.log(textUsed);
+        for (i = 0; i < altEffectText.length; i++) {
+          textTimer += 100;
+          doSetTimeOut(i, textEffect, altEffectText, textTimer);
+        }
+      } else {
+        for (i = 0; i < effectText.length; i++) {
+          textTimer += 100;
+          doSetTimeOut(i, textEffect, effectText, textTimer);
+        }
+      }
+    },
+    4000
+    // textEffect.style.display = 'block'
+  );
+  setTimeout(
+    () => {
+      textEffect.textContent = "";
+      textEffect.style.display = "none";
+      attacksContainer.style.display = "flex";
+    },
+    7500
+    // textEffect.style.display = 'block'
+  );
+};
+
+function clickLines() {
+  const navLinks = document.querySelector(".nav__links");
+  if (LinesState) {
+    LinesState = false;
+    navLinks.classList.remove("displayed");
+    navLinks.classList.add("hidden");
+    console.log(LinesState);
+  } else {
+    LinesState = true;
+    navLinks.classList.add("displayed");
+    navLinks.classList.remove("hidden");
+    console.log(LinesState);
+  }
+}
+
+lines.addEventListener("click", (e) => {
+  clickLines();
+});

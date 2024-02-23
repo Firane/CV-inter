@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=VT323&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -21,13 +21,30 @@
       <header>
         <nav class="nav">
           <div class="nav__name" id="name">Gaël Querharo</div>
-          <div class="nav__links">
-            <a href="" id="skills" class="nav__links__clickable">Compétences</a>
-            <a href="" id="experiences" class="nav__links__clickable"
+          <div class="nav__lines"><i class="fa-solid fa-bars"></i></div>
+          <div class="nav__links hidden">
+            <a
+              href="https://firanegq.com/#compétences"
+              id="skills"
+              class="nav__links__clickable"
+              >Compétences</a
+            >
+            <a
+              href="https://firanegq.com/#expériences"
+              id="experiences"
+              class="nav__links__clickable"
               >Expériences</a
             >
-            <a href="" id="about" class="nav__links__clickable">A propos</a>
-            <a href="" id="contact" class="nav__links__clickable"
+            <a
+              href="https://firanegq.com/#Apropos"
+              id="about"
+              class="nav__links__clickable"
+              >A propos</a
+            >
+            <a
+              href="https://firanegq.com/#contact"
+              id="contact"
+              class="nav__links__clickable"
               >Contactez moi</a
             >
           </div>
@@ -50,62 +67,246 @@
           </div>
           <div class="introducing__illustration" id="hatcontainer">
             <img src="./images/diplome.png" alt="Toque de diplomé" id="party" />
+            <figcaption>Click me ?</figcaption>
           </div>
         </section>
         <div class="splitter"></div>
-        <section class="skills">
-          <div class="skills__content">
-            <h2 class="skills__content__title">
-              Concernant mes compétences... 📃<span
-                class="skills__content__title__pen"
+        <section class="skills" id="compétences">
+          <h2 class="skills__title">
+            Concernant mes compétences...
+            <span class="skills__title__emojis"
+              >📃<span class="skills__title__pen"
                 ><span id="shaking">🖍️</span></span
-              >
-            </h2>
-            <div class="skills__content__langages">
-              Je suis capable d'utiliser les 3 languages suivants :
-              <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Javascript</li>
-              </ul>
+              ></span
+            >
+          </h2>
+          <div>
+            <div class="skills__content">
+              <div class="skills__content__langages">
+                Je suis capable d'utiliser les 3 languages suivants :
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                </ul>
+              </div>
+              <div class="skills__content__tools">
+                J'ai également réalisé des projets a l'aide des outils suivants
+                :
+                <ul>
+                  <li>Sass</li>
+                  <li>NodeJS (Express, Mongoose)</li>
+                  <li>React</li>
+                </ul>
+              </div>
+              <div class="skills__content__plus">
+                J'en profite également pour préciser que je programmme avec le
+                logiciel Visual Studio Code, et que j'ai déjà, a plusieurs
+                reprises héberger des projets sur Github (avec gestion de
+                branche notamment).
+              </div>
             </div>
-            <div class="skills__content__tools">
-              J'ai également réalisé des projets a l'aide des outils suivants :
-              <ul>
-                <li>Sass</li>
-                <li>NodeJS (Express, Mongoose)</li>
-                <li>React</li>
-              </ul>
-            </div>
-            <div class="skills__content__plus">
-              J'en profite également pour préciser que je programmme avec le
-              logiciel Visual Studio Code, et que j'ai déjà, a plusieurs
-              reprises héberger des projets sur Github (avec gestion de branche
-              notamment).
-            </div>
-          </div>
-          <div class="skills__illustration">
-            <div class="skills__illustration__logos">
-              <img src="./images/732212.png" alt="logo html" />
-              <img src="./images/663980.png" alt="logo css" />
-              <img src="./images/logojs.png" alt="logo javascript" />
-              <img
-                src="./images/1280px-Sass_Logo_Color.svg.png"
-                alt="logo Sass"
-              />
-              <img src="./images/2560px-Node.js_logo.svg.png" alt="logo Node" />
-              <img src="./images/React-icon.svg.png" alt="logo React" />
-              <img src="./images/25231.png" alt="logo Github" />
-            </div>
-            <div class="skills__illustration__image">
-              <img
-                src="./images/code-8012054_12802.png"
-                alt="Dessin d'un IDE"
-              />
+            <div class="skills__illustration">
+              <div class="skills__illustration__logos">
+                <img src="./images/732212.png" alt="logo html" />
+                <img src="./images/663980.png" alt="logo css" />
+                <img src="./images/logojs.png" alt="logo javascript" />
+                <img
+                  src="./images/1280px-Sass_Logo_Color.svg.png"
+                  alt="logo Sass"
+                />
+                <img
+                  src="./images/2560px-Node.js_logo.svg.png"
+                  alt="logo Node"
+                />
+                <img src="./images/React-icon.svg.png" alt="logo React" />
+                <img src="./images/25231.png" alt="logo Github" />
+              </div>
+              <div class="skills__illustration__image">
+                <img
+                  src="./images/code-8012054_12802.png"
+                  alt="Dessin d'un IDE"
+                />
+              </div>
             </div>
           </div>
         </section>
         <div class="splitter"></div>
+        <section class="experience" id="expériences">
+          <h2>Mes experiences</h2>
+          <div>
+            <div class="experience__content">
+              <p>
+                Tout au long de mon pacours Openclassrooms, j'ai été évalué sur
+                6 projets, portant sur des compétences différentes :
+              </p>
+              <ol>
+                <li>
+                  <a href="https://github.com/Firane/PJ1"
+                    >Booki : Une appli web, faites avec HTML5 & CSS3. Challenge
+                    : HTML, CSS, responsive.</a
+                  >
+                </li>
+                <li>
+                  <a href="https://github.com/Firane/P3-Ohmyfood-GQ"
+                    >Ohmyfood : 2 pages responsive en mobile first. Challenge :
+                    animation CSS, responsive.</a
+                  >
+                </li>
+                <li>
+                  <a href="https://github.com/Firane/La__panthere__final"
+                    >La panthère : retravailler un site web existant. Challenge
+                    : SEO, plan d'action, refonte CSS & HTML.</a
+                  >
+                </li>
+                <li>
+                  <a href="https://github.com/Firane/Kanap-Firane"
+                    >Kanap : projet Javascript vanilla. Challenge : JS,
+                    manipulation du DOM, API.
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/Firane/P6-Piiquante-main"
+                    >Piiquante : projet Node.JS. Challenge : Node, Express,
+                    Mongoose, Multer.</a
+                  >
+                </li>
+                <li>
+                  <a href="https://github.com/Firane/P7---Kasa"
+                    >Kasa : projet react. Challenge : React (JSX, props,
+                    hooks).</a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="experience__illustration">
+              <div class="experience__illustration__attackscontainer">
+                <div
+                  class="experience__illustration__attackscontainer__buttonscontainer"
+                >
+                  <button type="button" id="attackHtml" value="html">
+                    <i class="fa-solid fa-caret-right"></i> HTML
+                  </button>
+                  <button type="button" id="attackCss" value="css">
+                    <i class="fa-solid fa-caret-right"></i> CSS
+                  </button>
+                  <button
+                    type="button"
+                    id="attackJavascript"
+                    value="javascript"
+                  >
+                    <i class="fa-solid fa-caret-right"></i> Javascript
+                  </button>
+                  <button type="button" id="attackTrempette" value="trempette">
+                    <i class="fa-solid fa-caret-right"></i> Trempette
+                  </button>
+                </div>
+                <div
+                  class="experience__illustration__attackscontainer__textused"
+                ></div>
+                <div
+                  class="experience__illustration__attackscontainer__effects"
+                ></div>
+              </div>
+              <div class="experience__illustration__expcontainer" id="xpbar">
+                <h3>EXP</h3>
+                <div class="experience__illustration__expcontainer__bar">
+                  <div
+                    class="experience__illustration__expcontainer__bar__blue"
+                    id="bluebar"
+                  ></div>
+                  <div
+                    class="experience__illustration__expcontainer__bar__separators"
+                  >
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="splitter"></div>
+        <section class="about" id="Apropos">
+          <h2 class="about__title">A propos de moi</h2>
+          <div>
+            <div class="about__content">
+              <p class="about__content__description">
+                Un flash-back s'impose pour comprendre ma récente
+                reconversion...
+              </p>
+              <p class="about__content__description">
+                Après un BAC PRO SEN obtenu en 2011, j'ai pendant longtemps
+                cherché du travail dans la maintenance informatique sans jamais
+                trouver plus que des périodes d'immersions. Étant sous-diplômé,
+                et vivant dans une zone de sous-emploi dans l'informatique, ma
+                recherche d'emploi se déroulait évidemment, mal. Il m'est donc
+                venu à l'idée de me spécialiser, et d'approfondir ma passion,
+                toujours présente, pour le monde de l'informatique, en me
+                formant à un nouveau métier. Après une période de réflexion, en
+                prenant en compte mon intérêt depuis très jeune pour le web, et
+                celui pour la technologie, j'ai finalement trouvé un parcours
+                pour me former dans le développement web.
+              </p>
+              <p class="about__content__description">
+                Trentenaire d'origine bretonne (cotes d'armor), je suis un féru
+                de jeux-vidéo, d'animation japonaise. Je passe aussi beaucoup de
+                temps à regarder du contenu web, souvent relié aux deux éléments
+                cités juste avant, sur les réseaux sociaux (twitch, youtube).
+                J'ai sinon des intérêts, plus mineurs, pour la musique et le
+                cinéma. Ah oui, comme le montre l'image a coté, j'ai un chat et
+                j'aime beaucoup ces petits félins. 🐈
+              </p>
+            </div>
+            <div class="about__illustration">
+              <img
+                src="./images/Pamu.png"
+                alt="Mon chat, un british short hair noir."
+              />
+            </div>
+          </div>
+        </section>
+        <footer>
+          <div class="footer" id="contact">
+            <div class="footer__icons">
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <a href="mailto:gael.querharo@gmail.com"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="madeby">
+              Site entièrement réalisé par Gaël Querharo, avec HTML5, CSS3 et
+              Javascript
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
     <script src="./index.js"></script>
