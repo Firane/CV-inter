@@ -331,3 +331,14 @@ function clickLines() {
 lines.addEventListener("click", (e) => {
   clickLines();
 });
+
+function copiedFeedback() {
+  tel.innerHTML = "Copié !";
+  setTimeout(() => {
+    tel.innerHTML = `<i class="fa-solid fa-phone" aria-hidden="true"></i>`;
+  }, 2000);
+}
+tel.addEventListener("click", async () => {
+  await navigator.clipboard.writeText("0638652365");
+  copiedFeedback();
+});

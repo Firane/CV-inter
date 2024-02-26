@@ -51,7 +51,8 @@
     }
   }
   &__illustration {
-    width: 30%;
+    min-width: 350px;
+    max-width: 30%;
     position: relative;
     @include smartphone {
       width: 98%;
@@ -219,6 +220,9 @@
       height: 80px;
       display: flex;
       align-items: center;
+      @include smartphone {
+        width: 98%;
+      }
       &__buttonscontainer {
         display: flex;
         width: 100%;
