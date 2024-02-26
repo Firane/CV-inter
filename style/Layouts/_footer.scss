@@ -27,6 +27,12 @@ footer {
     & > i {
       color: $color-primary;
       font-size: 2rem;
+      &.fa-phone {
+        display: none;
+        @include smartphone {
+          display: inline;
+        }
+      }
     }
     & > a {
       & > i {
