@@ -11,13 +11,20 @@
   @include smartphone {
     text-align: center;
   }
+  @include tablets {
+    text-align: center;
+  }
+  @include landscapeSmartphone {
+    text-align: center;
+  }
 }
 
 body {
   background: $color-primary;
-  margin: 2rem auto 2rem auto;
-  max-width: 1200px;
-  width: 95%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  max-width: 1400px;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -27,4 +34,14 @@ a {
 
 h2 {
   font-size: 2.8rem;
+}
+
+main,
+header {
+  margin: auto 2rem auto 2rem;
+}
+footer {
+  width: 100%;
+  position: absolute;
+  left: 0px;
 }

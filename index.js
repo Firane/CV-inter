@@ -5,7 +5,7 @@ let confettisColor = ["#FDB414", "#0A7276", "#DC2129"];
 let xpPercent = 0;
 let buttonsThatGiveXp = [attackHtml, attackCss, attackJavascript];
 let allAttacksButtons = [...buttonsThatGiveXp, attackTrempette];
-const lines = document.querySelector(".nav__lines");
+const lines = document.querySelector(".nav__titleAndButton__lines");
 let LinesState = false;
 
 // ShakingPen c'est pour recup l'emoji stylo, hat recup le chapeau, confettisAmount determine le nombre de confettis afficher a lecran,
@@ -314,7 +314,7 @@ const showAttackUsed = (attackName) => {
 };
 
 function clickLines() {
-  const navLinks = document.querySelector(".nav__links");
+  const navLinks = document.querySelector(".nav__links__content");
   if (LinesState) {
     LinesState = false;
     navLinks.classList.remove("displayed");

@@ -1,5 +1,20 @@
 @mixin smartphone {
-  @media only screen and (min-width: 320px) and (max-width: 480px) {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin landscapeSmartphone {
+  @media only screen and (min-width: 481px) and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin tablets {
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin penEmojisBreakpoint {
+  @media only screen and (min-width: 732px) and (max-width: 837px) {
     @content;
   }
 }

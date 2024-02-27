@@ -20,33 +20,39 @@
     <div id="websiteContainer">
       <header>
         <nav class="nav">
-          <div class="nav__name" id="name">Gaël Querharo</div>
-          <div class="nav__lines"><i class="fa-solid fa-bars"></i></div>
+          <div class="nav__titleAndButton">
+            <div class="nav__titleAndButton__name" id="name">Gaël Querharo</div>
+            <button type="button" class="nav__titleAndButton__lines">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
           <div class="nav__links">
-            <a
-              href="https://firanegq.com/#compétences"
-              id="skills"
-              class="nav__links__clickable"
-              >Compétences</a
-            >
-            <a
-              href="https://firanegq.com/#expériences"
-              id="experiences"
-              class="nav__links__clickable"
-              >Expériences</a
-            >
-            <a
-              href="https://firanegq.com/#Apropos"
-              id="about"
-              class="nav__links__clickable"
-              >A propos</a
-            >
-            <a
-              href="https://firanegq.com/#contact"
-              id="contact"
-              class="nav__links__clickable"
-              >Contactez moi</a
-            >
+            <div class="nav__links__content">
+              <a
+                href="https://firanegq.com/#compétences"
+                id="skills"
+                class="nav__links__content__clickable"
+                >Compétences</a
+              >
+              <a
+                href="https://firanegq.com/#expériences"
+                id="experiences"
+                class="nav__links__content__clickable"
+                >Expériences</a
+              >
+              <a
+                href="https://firanegq.com/#Apropos"
+                id="about"
+                class="nav__links__content__clickable"
+                >A propos</a
+              >
+              <a
+                href="https://firanegq.com/#contact"
+                id="contact"
+                class="nav__links__content__clickable"
+                >Contactez moi</a
+              >
+            </div>
           </div>
         </nav>
       </header>
@@ -295,25 +301,25 @@
             </div>
           </div>
         </section>
-        <footer>
-          <div class="footer" id="contact">
-            <div class="footer__icons">
-              <i class="fa-brands fa-twitter"></i>
-              <button type="button" id="tel">
-                <i class="fa-solid fa-phone"></i>
-              </button>
-              <i class="fa-brands fa-linkedin"></i>
-              <a href="mailto:gael.querharo@gmail.com"
-                ><i class="fa-solid fa-envelope"></i
-              ></a>
-            </div>
-            <div class="madeby">
-              Site entièrement réalisé par Gaël Querharo, avec HTML5, CSS3 et
-              Javascript
-            </div>
-          </div>
-        </footer>
       </main>
+      <footer>
+        <div class="footer" id="contact">
+          <div class="footer__icons">
+            <i class="fa-brands fa-twitter"></i>
+            <button type="button" id="tel">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="mailto:gael.querharo@gmail.com"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </div>
+          <div class="madeby">
+            Site entièrement réalisé par Gaël Querharo, avec HTML5, CSS3 et
+            Javascript
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="./index.js"></script>
   </body>

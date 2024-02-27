@@ -8,9 +8,11 @@ footer {
   height: 7rem;
   display: flex;
   justify-content: center;
-
   @include smartphone {
     margin-top: 4rem;
+  }
+  @include tablets {
+    margin-top: 6rem;
   }
 }
 
@@ -46,7 +48,7 @@ footer {
       font-size: 1.2rem;
       & > i {
         color: $color-primary;
-        font-size: 1.9rem;
+        font-size: 1.7rem;
       }
     }
   }
