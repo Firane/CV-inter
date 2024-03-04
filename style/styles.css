@@ -558,6 +558,7 @@ footer {
 @media only screen and (min-width: 813px) and (max-width: 1024px) {
   .introducing {
     flex-direction: column;
+    margin-top: 0rem;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 812px) {
@@ -587,6 +588,11 @@ footer {
 .introducing__content__title {
   font-size: 4rem;
   position: relative;
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  .introducing__content__title {
+    margin-top: 1rem;
+  }
 }
 .introducing__content__title__emote {
   padding-bottom: 0.3rem;
