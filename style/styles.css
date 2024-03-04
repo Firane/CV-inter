@@ -72,6 +72,21 @@ p {
   text-align: justify;
   font-size: 1.35rem;
 }
+@media only screen and (max-width: 480px) {
+  p {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  p {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 812px) {
+  p {
+    text-align: center;
+  }
+}
 @keyframes rotateThisHand {
   0% {
     transform: rotate(-10deg);
@@ -552,7 +567,7 @@ p {
 }
 .splitter {
   width: 100%;
-  background: #e95e40;
+  background: #0b3140;
   height: 2px;
   margin-top: 10rem;
   margin-bottom: 10rem;
