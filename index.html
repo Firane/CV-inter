@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CV Interactif réalisé par Gaël Querharo"
+    />
     <title>CV interactif - Gaël Querharo</title>
     <script
       src="https://kit.fontawesome.com/caa96f4471.js"
@@ -22,7 +26,11 @@
         <nav class="nav">
           <div class="nav__titleAndButton">
             <div class="nav__titleAndButton__name" id="name">Gaël Querharo</div>
-            <button type="button" class="nav__titleAndButton__lines">
+            <button
+              type="button"
+              class="nav__titleAndButton__lines"
+              aria-label="nav-btn"
+            >
               <i class="fa-solid fa-bars"></i>
             </button>
           </div>
@@ -48,7 +56,6 @@
               >
               <a
                 href="https://firanegq.com/#contact"
-                id="contact"
                 class="nav__links__content__clickable"
                 >Contactez moi</a
               >
@@ -306,11 +313,11 @@
         <div class="footer" id="contact">
           <div class="footer__icons">
             <i class="fa-brands fa-twitter"></i>
-            <button type="button" id="tel">
+            <button type="button" id="tel" aria-label="Telephone">
               <i class="fa-solid fa-phone"></i>
             </button>
             <i class="fa-brands fa-linkedin"></i>
-            <a href="mailto:gael.querharo@gmail.com"
+            <a href="mailto:gael.querharo@gmail.com" aria-label="email"
               ><i class="fa-solid fa-envelope"></i
             ></a>
           </div>

@@ -347,6 +347,7 @@
           justify-content: center;
           column-gap: 0.3rem;
           align-items: center;
+          border: 2px outset grey;
           & > i {
             display: none;
           }
@@ -389,6 +390,9 @@
       @include smartphone {
         width: 98%;
       }
+      &.blinking {
+        animation: blinkThisXpBar 0.35s both infinite;
+      }
       & > h3 {
         color: yellow;
         font-weight: 600;
@@ -402,9 +406,6 @@
         width: 200px;
         height: 12px;
         position: relative;
-        // position: absolute;
-        // top: 7px;
-        // left: 35px;
         &__blue {
           position: relative;
           background: #5abedf;

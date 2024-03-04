@@ -103,7 +103,6 @@ const manyConfettis = () => {
         //     (hatcontainer.getBoundingClientRect().y +
         //       hatcontainer.getBoundingClientRect().height / 2));
         // Ca c'est pour avoir la hauteur max d'une confetti, si on voudrait faire une vitesse de chute dynamique a la hauteur de la fenetre
-        console.log(confetti.getBoundingClientRect().y);
         let vitesseDeChute = 500;
         let fallDuration =
           ((window.innerHeight - confetti.getBoundingClientRect().y) /
@@ -183,16 +182,11 @@ const xpPercentProgress = () => {
     xpPercent = 0;
     xpPercent += left;
     setTimeout(() => {
-      let blue = setInterval(() => {
-        xpbar.style.border = "4px solid #215fbb";
-      }, 200);
-      let black = setInterval(() => {
-        xpbar.style.border = "4px solid black";
-      }, 400);
-      setTimeout(() => {
-        clearInterval(blue), clearInterval(black);
-      }, 2000);
+      xpbar.classList.add("blinking");
     }, 2000);
+    setTimeout(() => {
+      xpbar.classList.remove("blinking");
+    }, 6000);
     setTimeout(() => {
       bluebar.style.display = `none`;
       bluebar.animate(
@@ -238,7 +232,6 @@ const xpPercentProgress = () => {
       }
     );
   }
-  console.log(xpPercent);
 };
 
 for (i = 0; i < allAttacksButtons.length; i++) {
@@ -273,7 +266,6 @@ const showAttackUsed = (attackName) => {
   let effectText = "C'est super efficace !".split("");
   let altEffectText = "Mais rien ne se passe.".split("");
   let textTimer = 0;
-  console.log(attackText);
   for (i = 0; i < attackText.length; i++) {
     textTimer += 100;
     doSetTimeOut(i, textUsed, attackText, textTimer);
@@ -281,13 +273,11 @@ const showAttackUsed = (attackName) => {
 
   setTimeout(
     () => {
-      console.log(textUsed);
       textTimer = 0;
       textUsed.textContent = "";
       textUsed.style.display = "none";
       textEffect.style.display = "block";
       if (attackName === "trempette") {
-        console.log(textUsed);
         for (i = 0; i < altEffectText.length; i++) {
           textTimer += 100;
           doSetTimeOut(i, textEffect, altEffectText, textTimer);
@@ -319,12 +309,10 @@ function clickLines() {
     LinesState = false;
     navLinks.classList.remove("displayed");
     navLinks.classList.add("hidden");
-    console.log(LinesState);
   } else {
     LinesState = true;
     navLinks.classList.add("displayed");
     navLinks.classList.remove("hidden");
-    console.log(LinesState);
   }
 }
 

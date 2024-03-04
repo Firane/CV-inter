@@ -1,3 +1,5 @@
+@import "../Utils/mixins";
+
 @keyframes rotateThisHand {
   0% {
     transform: rotate(-10deg);
@@ -94,11 +96,41 @@
   }
 }
 
+@keyframes menuSpawnTablets {
+  0% {
+    margin: 0rem 0rem -10.5rem 0rem;
+  }
+  100% {
+    margin: 0rem 0rem 0rem 0rem;
+  }
+}
+
 @keyframes menuFade {
   0% {
     margin: 1.5rem 0rem 0rem 0rem;
   }
   100% {
     margin: 0rem 0rem -15rem 0rem;
+  }
+}
+
+@keyframes menuFadeTablets {
+  0% {
+    margin: 0rem 0rem 0rem 0rem;
+  }
+  100% {
+    margin: 0rem 0rem -10.5rem 0rem;
+  }
+}
+
+@keyframes blinkThisXpBar {
+  0% {
+    border: 4px solid #def9ff;
+  }
+  50% {
+    border: 4px solid black;
+  }
+  100% {
+    border: 4px solid #def9ff;
   }
 }
