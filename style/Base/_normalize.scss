@@ -63,5 +63,14 @@ h2 {
 
 p {
   text-align: justify;
+  @include smartphone {
+    text-align: center;
+  }
+  @include tablets {
+    text-align: center;
+  }
+  @include landscapeSmartphone {
+    text-align: center;
+  }
   font-size: 1.35rem;
 }

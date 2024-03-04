@@ -8,11 +8,6 @@
     @content;
   }
 }
-@mixin lanscapeForceMenu {
-  @media only screen and (orientation: landscape) {
-    @content;
-  }
-}
 @mixin tablets {
   @media only screen and (min-width: 813px) and (max-width: 1024px) {
     @content;
