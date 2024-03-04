@@ -23,6 +23,7 @@
   margin-top: 5rem;
   display: flex;
   align-items: center;
+  -moz-column-gap: 5rem;
   column-gap: 5rem;
   @include smartphone {
     flex-direction: column;
@@ -54,6 +55,7 @@
         font-size: 3.3rem;
         display: inline-block;
         transform-origin: bottom right;
+        -webkit-animation: rotateThisHand 1.2s ease-in-out infinite;
         animation: rotateThisHand 1.2s ease-in-out infinite;
         position: absolute;
         bottom: 7px;
@@ -78,6 +80,7 @@
       margin-top: 2rem;
     }
     &:hover {
+      cursor: -webkit-grab;
       cursor: grab;
     }
     & > img {
@@ -114,6 +117,7 @@
   & > div {
     display: flex;
     flex-direction: row-reverse;
+    -moz-column-gap: 4rem;
     column-gap: 4rem;
     font-size: 1.15rem;
     @include smartphone {
@@ -154,12 +158,15 @@
     }
     &__pen {
       display: inline-block;
+      -webkit-animation: moveThisPen 4s both ease-in-out infinite;
       animation: moveThisPen 4s both ease-in-out infinite;
       & > span {
         display: inline-block;
+        -webkit-animation: shakeThisPen 0.2s both ease-in-out infinite;
         animation: shakeThisPen 0.2s both ease-in-out infinite;
         transform-origin: top right;
         &.animation__paused {
+          -webkit-animation-play-state: paused;
           animation-play-state: paused;
         }
       }
@@ -237,6 +244,7 @@
     &__logos {
       text-align: center;
       & > img {
+        -o-object-fit: cover;
         object-fit: cover;
         height: 35px;
       }
@@ -256,6 +264,7 @@
   & > div {
     display: flex;
     align-items: center;
+    -moz-column-gap: 5rem;
     column-gap: 5rem;
     justify-content: space-between;
     @include smartphone {
@@ -345,6 +354,7 @@
           color: black;
           display: flex;
           justify-content: center;
+          -moz-column-gap: 0.3rem;
           column-gap: 0.3rem;
           align-items: center;
           border: 2px outset grey;
@@ -356,6 +366,7 @@
             & > i {
               display: inline;
               color: black;
+              -webkit-animation: blink 0.8s both ease-in-out infinite;
               animation: blink 0.8s both ease-in-out infinite;
             }
           }
@@ -391,6 +402,7 @@
         width: 98%;
       }
       &.blinking {
+        -webkit-animation: blinkThisXpBar 0.35s both infinite;
         animation: blinkThisXpBar 0.35s both infinite;
       }
       & > h3 {
@@ -436,6 +448,7 @@
 }
 
 .about {
+  -moz-column-gap: 5rem;
   column-gap: 5rem;
   & > h2 {
     text-align: right;
@@ -455,6 +468,7 @@
     align-items: center;
     flex-direction: row-reverse;
     text-align: right;
+    -moz-column-gap: 3rem;
     column-gap: 3rem;
     @include smartphone {
       flex-direction: column;

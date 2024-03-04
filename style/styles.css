@@ -48,7 +48,6 @@ footer {
   position: absolute;
   left: 0px;
 }
-
 @keyframes rotateThisHand {
   0% {
     transform: rotate(-10deg);
@@ -186,7 +185,7 @@ footer {
   .nav {
     justify-content: center;
     -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
     flex-wrap: wrap;
     row-gap: 3rem;
   }
@@ -195,7 +194,7 @@ footer {
   .nav {
     justify-content: center;
     -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
     flex-direction: column;
     row-gap: 3rem;
   }
@@ -204,7 +203,7 @@ footer {
   .nav {
     justify-content: center;
     -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
     flex-direction: column;
     row-gap: 3rem;
     width: 70%;
@@ -215,7 +214,7 @@ footer {
   display: flex;
   align-items: center;
   -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
 @media only screen and (max-width: 480px) {
   .nav__titleAndButton {
@@ -400,7 +399,6 @@ footer {
   background: #5ebec4;
   color: #fdf5df;
 }
-
 @keyframes rotateThisHand {
   0% {
     transform: rotate(-10deg);
@@ -549,7 +547,7 @@ footer {
   display: flex;
   align-items: center;
   -moz-column-gap: 5rem;
-       column-gap: 5rem;
+  column-gap: 5rem;
 }
 @media only screen and (max-width: 480px) {
   .introducing {
@@ -666,7 +664,7 @@ footer {
   display: flex;
   flex-direction: row-reverse;
   -moz-column-gap: 4rem;
-       column-gap: 4rem;
+  column-gap: 4rem;
   font-size: 1.15rem;
 }
 @media only screen and (max-width: 480px) {
@@ -822,7 +820,7 @@ footer {
 }
 .skills__illustration__logos > img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 35px;
 }
 .skills__illustration__image > img {
@@ -838,7 +836,7 @@ footer {
   display: flex;
   align-items: center;
   -moz-column-gap: 5rem;
-       column-gap: 5rem;
+  column-gap: 5rem;
   justify-content: space-between;
 }
 @media only screen and (max-width: 480px) {
@@ -952,7 +950,7 @@ footer {
   display: flex;
   justify-content: center;
   -moz-column-gap: 0.3rem;
-       column-gap: 0.3rem;
+  column-gap: 0.3rem;
   align-items: center;
   border: 2px outset grey;
 }
@@ -1042,7 +1040,7 @@ footer {
 
 .about {
   -moz-column-gap: 5rem;
-       column-gap: 5rem;
+  column-gap: 5rem;
 }
 .about > h2 {
   text-align: right;
@@ -1069,7 +1067,7 @@ footer {
   flex-direction: row-reverse;
   text-align: right;
   -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  column-gap: 3rem;
 }
 @media only screen and (max-width: 480px) {
   .about > div {
@@ -1158,7 +1156,7 @@ footer {
   text-align: center;
   display: flex;
   -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
 .footer__icons > i {
   color: #fdf5df;
