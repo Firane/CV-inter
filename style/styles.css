@@ -600,7 +600,7 @@ footer {
   display: inline-block;
   transform-origin: bottom right;
   animation: rotateThisHand 1.2s ease-in-out infinite;
-  position: absolute;
+  position: relative;
   bottom: 7px;
 }
 .introducing__content__description {
