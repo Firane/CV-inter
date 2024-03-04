@@ -3,7 +3,9 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Marcellus", serif;
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   font-weight: 400;
   font-style: normal;
   color: $color-secondary;
@@ -24,8 +26,14 @@ body {
   margin: 0 auto;
   margin-top: 1rem;
   max-width: 1400px;
-  width: 100%;
+  width: 90%;
   overflow-x: hidden;
+  @include smartphone {
+    width: 100%;
+  }
+  @include landscapeSmartphone {
+    width: 100%;
+  }
 }
 
 a {
@@ -44,4 +52,16 @@ footer {
   width: 100%;
   position: absolute;
   left: 0px;
+}
+
+h1,
+h2 {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  text-align: justify;
+  font-size: 1.35rem;
 }

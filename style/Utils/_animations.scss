@@ -1,4 +1,5 @@
 @import "../Utils/mixins";
+@import "../Utils/variables";
 
 @-webkit-keyframes rotateThisHand {
   0% {
@@ -150,6 +151,8 @@
   }
 }
 
+// Pour l'effet sur la barre d'xp
+
 @-webkit-keyframes blink {
   0% {
     opacity: 0;
@@ -251,7 +254,7 @@
     border: 4px solid #def9ff;
   }
   50% {
-    border: 4px solid black;
+    border: 4px solid $color-black-gameboy;
   }
   100% {
     border: 4px solid #def9ff;
@@ -263,7 +266,7 @@
     border: 4px solid #def9ff;
   }
   50% {
-    border: 4px solid black;
+    border: 4px solid $color-black-gameboy;
   }
   100% {
     border: 4px solid #def9ff;

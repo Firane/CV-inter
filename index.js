@@ -60,8 +60,6 @@ const manyConfettis = () => {
       // Ce calcul doit donc prendre en compte la position de l'élément, ça largeur ou hauteur, ainsi que la taille de l'écran.
       // A cela je rajoute un nombre positif ou négatif pour l'axe x, et seulement négatif pour l'axe y (qu'aucun confettis soit propulsé par bas,
       // alors que pour l'axe x ils peuvent aller gauche ou droite, positif ou négatif donc.)
-
-      let confettiFallingRotation = Math.round(Math.random() * 500) - 250;
       const confetti = document.createElement("div");
       confetti.classList.add("confetti");
       confetti.style.background = confettisColor[Math.round(Math.random() * 2)];
@@ -97,12 +95,6 @@ const manyConfettis = () => {
       // Ici je détermine d'abord la position centrale du chapeau dynamiquement, pour ensuite les décaller, chacunes individuellement de cette position a cette postion + nombre random.
       // Le cubic bezier renforce la dynamique de ralentissement de la conffetis avant la retombé
       const makeThemFall = () => {
-        // let numberMaxY =
-        //   1000 +
-        //   (window.innerHeight / 2 -
-        //     (hatcontainer.getBoundingClientRect().y +
-        //       hatcontainer.getBoundingClientRect().height / 2));
-        // Ca c'est pour avoir la hauteur max d'une confetti, si on voudrait faire une vitesse de chute dynamique a la hauteur de la fenetre
         let vitesseDeChute = 500;
         let fallDuration =
           ((window.innerHeight - confetti.getBoundingClientRect().y) /
@@ -162,9 +154,11 @@ for (i = 0; i < buttonsThatGiveXp.length; i++) {
     xpPercentProgress();
   });
 }
-// attackHtml.addEventListener("click", (e) => {});
 
 const xpPercentProgress = () => {
+  // Comportement de ma barre d'xp selon son statut. Si le pourcentage arrive a 100 je remplis
+  // et garde le reste pour l'intégrer a la prochaine barre à remplir, pour ne pas avoir de perte d'xp
+  // J'ajoute également un effet de blink sur la barre du dessous pour signifier qu'un niveau vient d'être finit
   if (xpPercent >= 100 - 30) {
     bluebar.animate(
       [
@@ -234,6 +228,8 @@ const xpPercentProgress = () => {
   }
 };
 
+// Ajout d'un event listener sur chacun de mes boutons
+
 for (i = 0; i < allAttacksButtons.length; i++) {
   allAttacksButtons[i].addEventListener("click", (e) => {
     if (e.target.value === undefined) {
@@ -243,6 +239,8 @@ for (i = 0; i < allAttacksButtons.length; i++) {
     }
   });
 }
+
+// Setimeout qui va me permettre de copié l'effet de texte propre a la gameboy de l'époque. Une lettre apparait apres l'autre.
 
 function doSetTimeOut(i, textPart, attackText, textTimer) {
   setTimeout(function () {
@@ -268,40 +266,38 @@ const showAttackUsed = (attackName) => {
   let textTimer = 0;
   for (i = 0; i < attackText.length; i++) {
     textTimer += 100;
+    // On retrouve la fonction juste ici, avec un délais de 100ms entre chaque lettre.
+    // Je l'utilise ici avec le nom de l'attaque en question, plus loin elle sera ré-utilisée avec l'effet du sort.
     doSetTimeOut(i, textUsed, attackText, textTimer);
   }
 
-  setTimeout(
-    () => {
-      textTimer = 0;
-      textUsed.textContent = "";
-      textUsed.style.display = "none";
-      textEffect.style.display = "block";
-      if (attackName === "trempette") {
-        for (i = 0; i < altEffectText.length; i++) {
-          textTimer += 100;
-          doSetTimeOut(i, textEffect, altEffectText, textTimer);
-        }
-      } else {
-        for (i = 0; i < effectText.length; i++) {
-          textTimer += 100;
-          doSetTimeOut(i, textEffect, effectText, textTimer);
-        }
+  setTimeout(() => {
+    textTimer = 0;
+    textUsed.textContent = "";
+    textUsed.style.display = "none";
+    textEffect.style.display = "block";
+    if (attackName === "trempette") {
+      for (i = 0; i < altEffectText.length; i++) {
+        textTimer += 100;
+        // ici avec l'effet du sort trempette (rien ne se passe)
+        doSetTimeOut(i, textEffect, altEffectText, textTimer);
       }
-    },
-    4000
-    // textEffect.style.display = 'block'
-  );
-  setTimeout(
-    () => {
-      textEffect.textContent = "";
-      textEffect.style.display = "none";
-      attacksContainer.style.display = "flex";
-    },
-    7500
-    // textEffect.style.display = 'block'
-  );
+    } else {
+      for (i = 0; i < effectText.length; i++) {
+        textTimer += 100;
+        // ici avec l'effet des autres sorts (super efficace)
+        doSetTimeOut(i, textEffect, effectText, textTimer);
+      }
+    }
+  }, 4000);
+  setTimeout(() => {
+    textEffect.textContent = "";
+    textEffect.style.display = "none";
+    attacksContainer.style.display = "flex";
+  }, 7500);
 };
+
+// Fonction permettant l'ouverture du menu de navigation après appuie sur le bouton correspondant dans le header
 
 function clickLines() {
   const navLinks = document.querySelector(".nav__links__content");
@@ -319,6 +315,8 @@ function clickLines() {
 lines.addEventListener("click", (e) => {
   clickLines();
 });
+
+// Fonction permettant d'intégrer mon numéro de téléphone dans le presse-papier de l'utilisateur
 
 function copiedFeedback() {
   tel.innerHTML = "Copié !";
