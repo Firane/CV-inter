@@ -272,3 +272,21 @@
     border: 4px solid #def9ff;
   }
 }
+
+@keyframes rotateThisArrow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(450deg);
+  }
+}
+
+@keyframes rotateThisArrowBack {
+  0% {
+    transform: rotate(450deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

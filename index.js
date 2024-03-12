@@ -1,12 +1,15 @@
 const shakingPen = document.getElementById("shaking");
 const hat = document.querySelector("#party");
 let confettisAmount = document.querySelectorAll(".confetti");
-let confettisColor = ["#FDB414", "#0A7276", "#DC2129"];
+let confettisColor = ["#0A7276", "#BA5624", "#FDB414"];
 let xpPercent = 0;
 let buttonsThatGiveXp = [attackHtml, attackCss, attackJavascript];
 let allAttacksButtons = [...buttonsThatGiveXp, attackTrempette];
 const lines = document.querySelector(".nav__titleAndButton__lines");
 let LinesState = false;
+const dropdownsBtn = document.querySelectorAll(
+  ".experience__content__dropdown__btn"
+);
 
 // ShakingPen c'est pour recup l'emoji stylo, hat recup le chapeau, confettisAmount determine le nombre de confettis afficher a lecran,
 // je l'utilise plus tard pour savoir si on peut relancer un generateur de confetti sans faire ramer le site.
@@ -328,3 +331,75 @@ tel.addEventListener("click", async () => {
   await navigator.clipboard.writeText("0638652365");
   copiedFeedback();
 });
+
+// Dropdowns
+
+for (i = 0; i < dropdownsBtn.length; i++) {
+  dropdownsBtn[i].addEventListener("click", (e) => {
+    let theIcon = e.currentTarget.children;
+    let parentElement = e.currentTarget.parentNode;
+    let parentElementSibling = parentElement.nextElementSibling;
+    if (parentElementSibling.classList.contains("displayed")) {
+      theIcon[0].classList.add("default");
+      theIcon[0].classList.remove("rotated");
+      parentElementSibling.classList.remove("displayed");
+      parentElement.classList.remove("displayed");
+      parentElementSibling.classList.add("hidden");
+      parentElementSibling.animate(
+        [
+          {
+            display: "block",
+            margin: `-2rem 0px 10px 0px`,
+          },
+          {
+            margin: `-2rem 0px -${
+              parentElementSibling.getBoundingClientRect().height - 30
+            }px 0px`,
+          },
+        ],
+        {
+          duration:
+            (parentElementSibling.getBoundingClientRect().height / 100) * 200,
+          fill: "forwards",
+          easing: "linear",
+        }
+      );
+      setTimeout(() => {
+        parentElementSibling.classList.remove("hidden");
+        parentElementSibling.classList.remove("displayed");
+        parentElementSibling.classList.add("default");
+      }, (parentElementSibling.getBoundingClientRect().height / 100) * 200);
+    } else {
+      theIcon[0].classList.remove("default");
+      theIcon[0].classList.add("rotated");
+      parentElementSibling.classList.remove("hidden");
+      parentElementSibling.classList.remove("default");
+      parentElementSibling.classList.add("displayed");
+      parentElement.classList.add("displayed");
+      parentElementSibling.animate(
+        [
+          {
+            margin: `-2rem 0px -${
+              parentElementSibling.getBoundingClientRect().height - 30
+            }px 0px`,
+            offset: 0,
+          },
+          {
+            display: "block",
+            offset: 0.2,
+          },
+          {
+            margin: `-2rem 0px 10px 0px`,
+            offset: 1,
+          },
+        ],
+        {
+          duration:
+            (parentElementSibling.getBoundingClientRect().height / 100) * 200,
+          fill: "forwards",
+          easing: "linear",
+        }
+      );
+    }
+  });
+}

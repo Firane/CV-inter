@@ -4,14 +4,6 @@
 
 // -------------------------------------   Out of bounds stuffs   -------------------------------------
 
-.splitter {
-  width: 100%;
-  background: $color-secondary;
-  height: 2px;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-}
-
 .reset {
   width: 0%;
 }
@@ -28,7 +20,7 @@
 // -------------------------------------   Introduce   -------------------------------------
 
 .introducing {
-  margin-top: 5rem;
+  background: $color-primary;
   display: flex;
   align-items: center;
   -moz-column-gap: 5rem;
@@ -57,10 +49,15 @@
       width: 90%;
     }
     &__title {
-      font-size: 4rem;
+      font-size: 3.3rem;
       position: relative;
       @include tablets {
         margin-top: 2rem;
+      }
+      &__bonjour {
+        color: $color-tertiary;
+        font-family: "Fjalla One", sans-serif;
+        font-size: 4rem;
       }
       &__emote {
         padding-bottom: 0.3rem;
@@ -73,8 +70,21 @@
         bottom: 7px;
       }
     }
+    &__profession {
+      color: $color-primary;
+      background: $color-secondary;
+      font-size: 2.2rem;
+      display: inline-block;
+      margin: 0;
+      padding: 0rem 1rem 0rem 0.3rem;
+    }
     &__description {
       font-size: 1.8rem;
+      margin-top: 1rem;
+      &__languages {
+        color: $color-tertiary;
+        font-weight: 600;
+      }
     }
   }
   &__illustration {
@@ -105,29 +115,13 @@
         transform: rotate(0deg);
       }
     }
-    & > figcaption {
-      font-size: 0.7rem;
-      margin-top: 2rem;
-      color: #eeede9;
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      text-align: center;
-      transform: translate(-50%, -50%) rotate(30deg);
-      font-size: 1.3rem;
-      @include smartphone {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-      @include landscapeSmartphone {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-    }
   }
 }
 
 // -------------------------------------   Skills   -------------------------------------
 
 .skills {
+  background: $color-primary;
   & > div {
     display: flex;
     flex-direction: row-reverse;
@@ -152,7 +146,7 @@
   }
   &__title {
     margin-top: 0;
-    text-align: right;
+    text-align: left;
     @include smartphone {
       text-align: center;
     }
@@ -169,6 +163,10 @@
       @include penEmojisBreakpoint {
         display: block;
       }
+    }
+    &__compétences {
+      color: $color-tertiary;
+      font-family: "Fjalla One", sans-serif;
     }
     &__pen {
       display: inline-block;
@@ -187,89 +185,25 @@
     }
   }
   &__content {
-    width: 70%;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     @include smartphone {
       width: 98%;
     }
     &__langages {
-      & > ul {
-        list-style-position: inside;
-        direction: rtl;
-        padding-right: 0;
-        @include smartphone {
-          direction: ltr;
-        }
-        @include tablets {
-          direction: ltr;
-        }
-        @include landscapeSmartphone {
-          direction: ltr;
-        }
-      }
+      border-radius: 20px;
+      width: 45%;
+      height: 200px;
+      background: $color-tertiary;
+      @include window($color-tertiary);
     }
     &__tools {
-      & > ul {
-        list-style-position: inside;
-        direction: rtl;
-        padding-right: 0;
-        @include smartphone {
-          direction: ltr;
-        }
-        @include tablets {
-          direction: ltr;
-        }
-        @include landscapeSmartphone {
-          direction: ltr;
-        }
-      }
-    }
-    &__plus {
-      font-size: 0.9rem;
-      font-style: italic;
-    }
-  }
-  &__illustration {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-evenly;
-    width: 30%;
-    @include smartphone {
-      width: 98%;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      flex-direction: column-reverse;
-      row-gap: 1.5rem;
-    }
-    @include tablets {
-      width: 60%;
-      flex-direction: column-reverse;
-      row-gap: 2rem;
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-    }
-    @include landscapeSmartphone {
-      width: 70%;
-      flex-direction: column-reverse;
-      row-gap: 2rem;
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-    }
-    &__logos {
-      text-align: center;
-      & > img {
-        -o-object-fit: cover;
-        object-fit: cover;
-        height: 35px;
-      }
-    }
-    &__image {
-      & > img {
-        width: 100%;
-        @include smartphone {
-          width: 80%;
-        }
-      }
+      border-radius: 20px;
+      width: 45%;
+      height: 200px;
+      background: $color-secondary;
+      @include window($color-secondary);
     }
   }
 }
@@ -277,6 +211,7 @@
 // -------------------------------------   Experience   -------------------------------------
 
 .experience {
+  background: $color-primary;
   & > div {
     display: flex;
     align-items: center;
@@ -304,6 +239,88 @@
     }
     @include landscapeSmartphone {
       width: 85%;
+    }
+    & > p {
+      margin-bottom: 1.5rem;
+    }
+    &__dropdowns {
+      overflow: hidden;
+      padding-right: 7px;
+      position: relative;
+      &__top {
+        -webkit-box-shadow: 3px 3px 2px 0px #000000;
+        box-shadow: 3px 3px 2px 0px #000000;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 3rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 2;
+        margin-top: 0rem;
+        background: $color-secondary;
+        // &.displayed {
+        //   -webkit-animation: dropdownMarginIn 0.5s ease-in-out forwards;
+        //   animation: dropdownMarginIn 0.5s ease-in-out forwards;
+        // }
+        & > h3 {
+          margin-left: 1.5rem;
+          color: $color-primary;
+        }
+        & > button {
+          border-radius: 50%;
+          margin-right: 2rem;
+          height: 40px;
+          width: 40px;
+          padding: 0;
+          border: 1px solid $color-primary;
+          position: relative;
+          background: $color-primary;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          aspect-ratio: 1 / 1;
+          &:hover {
+            & > i {
+              color: brighter-color($color-secondary);
+            }
+          }
+          & > i {
+            text-align: center;
+            font-size: 2rem;
+            color: $color-secondary;
+            background: $color-primary;
+            border-radius: 50%;
+            text-align: center;
+            &.rotated {
+              animation: rotateThisArrow 0.5s cubic-bezier(0, 0, 0.02, 0.96)
+                forwards;
+            }
+            &.default {
+              animation: rotateThisArrowBack 0.5s cubic-bezier(0, 0, 0.02, 0.96)
+                forwards;
+            }
+          }
+        }
+      }
+      &__bottom {
+        padding: 1rem;
+        padding-top: 1.5rem;
+        -webkit-box-shadow: 3px 3px 2px 0px #000000;
+        box-shadow: 2px 2px 2px 0px #000000;
+        border-radius: 0px 0px 15px 15px;
+        background: brighter-color($color-secondary);
+        & > div {
+          color: white;
+        }
+        &.default {
+          display: none;
+          // margin-top: -2rem;
+        }
+      }
     }
     & > ul {
       margin-left: 0px;
@@ -479,6 +496,7 @@
 // -------------------------------------   About   -------------------------------------
 
 .about {
+  background: $color-primary;
   -moz-column-gap: 5rem;
   column-gap: 5rem;
   & > h2 {

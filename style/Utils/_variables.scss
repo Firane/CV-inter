@@ -1,14 +1,21 @@
-// $color-primary: #fdf5df;
-// $color-secondary: #5ebec4;
 $color-primary: #eeede9;
 $color-secondary: #0b3140;
-$color-tertiary: #e95e40;
+$color-tertiary: #ba5624;
+$color-background: #cccccc;
 $color-black-gameboy: #202926;
 
-@function brighter-color($color) {
+@function darken-color($color) {
   $hue: hue($color);
   $sat: 80%;
   $light: 35%;
+  $brighter: hsl($hue, $sat, $light);
+  @return $darken;
+}
+
+@function brighter-color($color) {
+  $hue: hue($color);
+  $sat: 70%;
+  $light: 60%;
   $brighter: hsl($hue, $sat, $light);
   @return $brighter;
 }
