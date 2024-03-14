@@ -10,6 +10,11 @@ let LinesState = false;
 const dropdownsBtn = document.querySelectorAll(
   ".experience__content__dropdown__btn"
 );
+const dropdownsImg = document.querySelectorAll(
+  ".experience__content__dropdowns__bottom__container__images__img"
+);
+let carrouselImages = [];
+let carrouselIndex;
 
 // ShakingPen c'est pour recup l'emoji stylo, hat recup le chapeau, confettisAmount determine le nombre de confettis afficher a lecran,
 // je l'utilise plus tard pour savoir si on peut relancer un generateur de confetti sans faire ramer le site.
@@ -403,3 +408,53 @@ for (i = 0; i < dropdownsBtn.length; i++) {
     }
   });
 }
+
+for (i = 0; i < dropdownsImg.length; i++) {
+  dropdownsImg[i].addEventListener("click", (e) => {
+    let myImg = e.currentTarget;
+    let allImg = myImg.parentNode.children;
+    carrouselImages = allImg;
+    carrouselIndex = Array.prototype.indexOf.call(allImg, myImg);
+    console.log(carrouselIndex);
+    let carrouselFirst = carrouselImageContainer.appendChild(
+      e.currentTarget.cloneNode(true)
+    );
+    carrouselFirst.classList.add("carrouselImg");
+    carrousel.style.display = "block";
+    main.style.opacity = "0.1";
+  });
+}
+
+carrouselCross.addEventListener("click", (e) => {
+  carrouselImages = [];
+  let carrouselImg = document.querySelector(".carrouselImg");
+  carrouselImg.remove();
+  carrousel.style.display = "none";
+  main.style.opacity = "1";
+});
+
+carrouselLeft.addEventListener("click", (e) => {
+  carrouselIndex -= 1;
+  if (carrouselIndex < 0) {
+    carrouselIndex = carrouselImages.length - 1;
+  }
+  let deleteThatOne = document.querySelector(".carrouselImg");
+  deleteThatOne.remove();
+  let carrouselNext = carrouselImageContainer.appendChild(
+    carrouselImages[carrouselIndex].cloneNode(true)
+  );
+  carrouselNext.classList.add("carrouselImg");
+});
+
+carrouselRight.addEventListener("click", (e) => {
+  carrouselIndex += 1;
+  if (carrouselIndex > carrouselImages.length - 1) {
+    carrouselIndex = 0;
+  }
+  let deleteThatOne = document.querySelector(".carrouselImg");
+  deleteThatOne.remove();
+  let carrouselNext = carrouselImageContainer.appendChild(
+    carrouselImages[carrouselIndex].cloneNode(true)
+  );
+  carrouselNext.classList.add("carrouselImg");
+});

@@ -12,10 +12,10 @@ $color-black-gameboy: #202926;
   @return $darken;
 }
 
-@function brighter-color($color) {
+@function brighter-color($color, $saturation, $lighting) {
   $hue: hue($color);
-  $sat: 70%;
-  $light: 60%;
+  $sat: $saturation;
+  $light: $lighting;
   $brighter: hsl($hue, $sat, $light);
   @return $brighter;
 }

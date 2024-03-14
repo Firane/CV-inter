@@ -86,3 +86,15 @@ section {
   padding: 3rem;
   border-radius: 30px;
 }
+button {
+  cursor: pointer;
+}
+
+.orange__title {
+  color: $color-tertiary;
+  font-family: "Fjalla One", sans-serif;
+}
+
+.orange__word {
+  color: $color-tertiary;
+}

@@ -25,14 +25,14 @@
   border-radius: 50%;
 }
 
-@mixin window($color) {
+@mixin window($color, $saturation, $lightning) {
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 20px 20px 0px 0px;
     height: 30%;
-    background: brighter-color($color);
+    background: brighter-color($color, $saturation, $lightning);
     & > h3 {
       font-size: 2rem;
       font-family: "Fjalla One", sans-serif;
