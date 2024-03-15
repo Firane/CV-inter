@@ -60,18 +60,34 @@
   &__list {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    height: 70%;
+    @include smartphone {
+      flex-wrap: wrap;
+      height: unset;
+    }
     & > div {
       display: flex;
       flex-direction: column;
       align-items: center;
+      @include smartphone {
+        width: 45%;
+        justify-content: center;
+      }
       & > img {
-        width: 60%;
+        width: 53px;
         margin-top: 1rem;
+        @include smartphone {
+          width: 28px;
+        }
       }
       & > div {
         color: $color-primary;
         font-size: 1.2rem;
         margin-top: 0.5rem;
+        @include smartphone {
+          font-size: 0.8rem;
+        }
       }
     }
   }

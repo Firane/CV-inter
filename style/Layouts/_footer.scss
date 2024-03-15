@@ -34,6 +34,9 @@ footer {
       & > i {
         color: $color-primary;
         font-size: 2rem;
+        &:hover {
+          color: $color-tertiary;
+        }
       }
     }
     & > button {
@@ -50,6 +53,9 @@ footer {
       & > i {
         color: $color-primary;
         font-size: 1.7rem;
+        &:hover {
+          color: $color-tertiary;
+        }
       }
     }
   }

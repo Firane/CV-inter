@@ -11,6 +11,17 @@ header {
   margin: 0px;
   -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.8);
   box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.8);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  @include tablets {
+    position: relative;
+  }
+  @include landscapeSmartphone {
+    position: relative;
+  }
+  @include smartphone {
+    position: relative;
+  }
 }
 .nav {
   display: flex;
@@ -23,21 +34,20 @@ header {
     -moz-column-gap: 3rem;
     column-gap: 3rem;
     flex-wrap: wrap;
-    row-gap: 3rem;
   }
   @include landscapeSmartphone {
     justify-content: center;
     -moz-column-gap: 3rem;
     column-gap: 3rem;
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 0rem;
   }
   @include tablets {
     justify-content: center;
     -moz-column-gap: 3rem;
     column-gap: 3rem;
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 0rem;
     width: 70%;
     margin: 0 auto;
   }
@@ -121,7 +131,6 @@ header {
         margin: 0rem 0rem -15rem 0rem;
         justify-content: space-between;
         flex-direction: row;
-        margin-top: 0px !important;
       }
       &.displayed {
         @include smartphone {

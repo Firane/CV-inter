@@ -1,3 +1,5 @@
+// ----------------------------------- VARIABLES -----------------------------------
+
 const shakingPen = document.getElementById("shaking");
 const hat = document.querySelector("#party");
 let confettisAmount = document.querySelectorAll(".confetti");
@@ -16,13 +18,10 @@ const dropdownsImg = document.querySelectorAll(
 let carrouselImages = [];
 let carrouselIndex;
 
+// ----------------------------------- EMOJIS ANIMATION -----------------------------------
+
 // ShakingPen c'est pour recup l'emoji stylo, hat recup le chapeau, confettisAmount determine le nombre de confettis afficher a lecran,
 // je l'utilise plus tard pour savoir si on peut relancer un generateur de confetti sans faire ramer le site.
-
-hat.addEventListener("click", (e) => {
-  manyConfettis();
-  return;
-});
 
 const thisPenShakingMustStop = () => {
   shakingPen.classList.add("animation__paused");
@@ -43,6 +42,13 @@ setInterval(timeOuts, 4000);
 setTimeout(thisPenShakingMustStop, 2320);
 setTimeout(thisPenShakingMustStart, 4000);
 // ces deux lignes là sont nécessaire pour que l'animation fonctionne dès le chargement de la page, après le set interval prend le relais.
+
+// ----------------------------------- CONFETTIS'S HAT -----------------------------------
+
+hat.addEventListener("click", (e) => {
+  manyConfettis();
+  return;
+});
 
 const manyConfettis = () => {
   let number = Math.round(Math.random() * 100);
@@ -156,6 +162,8 @@ const manyConfettis = () => {
   // Ici je creer une fonction qui delete les confettis sorti lateralement de l'ecran.
   // Je fais une autre fonction me permettant de delete les confettis existantes. Je delete les confettis au bout de 7s.
 };
+
+// ----------------------------------- POCKET'S MONSTERS EXPERIENCE -----------------------------------
 
 for (i = 0; i < buttonsThatGiveXp.length; i++) {
   buttonsThatGiveXp[i].addEventListener("click", (e) => {
@@ -305,6 +313,8 @@ const showAttackUsed = (attackName) => {
   }, 7500);
 };
 
+// ----------------------------------- HEADER'S MENU -----------------------------------
+
 // Fonction permettant l'ouverture du menu de navigation après appuie sur le bouton correspondant dans le header
 
 function clickLines() {
@@ -324,6 +334,8 @@ lines.addEventListener("click", (e) => {
   clickLines();
 });
 
+// ----------------------------------- FOOTER CLIPBOARD TEL -----------------------------------
+
 // Fonction permettant d'intégrer mon numéro de téléphone dans le presse-papier de l'utilisateur
 
 function copiedFeedback() {
@@ -337,7 +349,7 @@ tel.addEventListener("click", async () => {
   copiedFeedback();
 });
 
-// Dropdowns
+// ----------------------------------- DROPDOWNS -----------------------------------
 
 for (i = 0; i < dropdownsBtn.length; i++) {
   dropdownsBtn[i].addEventListener("click", (e) => {
@@ -408,6 +420,8 @@ for (i = 0; i < dropdownsBtn.length; i++) {
     }
   });
 }
+
+// ----------------------------------- CARROUSEL -----------------------------------
 
 for (i = 0; i < dropdownsImg.length; i++) {
   dropdownsImg[i].addEventListener("click", (e) => {

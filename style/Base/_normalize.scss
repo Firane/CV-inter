@@ -25,9 +25,7 @@ body {
   background-color: $color-background;
   background-repeat: repeat;
   margin: 0 auto;
-  margin-top: 1rem;
-  max-width: 1400px;
-  width: 90%;
+  max-width: 1200px;
   overflow-x: hidden;
   @include smartphone {
     width: 100%;
@@ -52,6 +50,10 @@ h2 {
 main,
 header {
   margin: auto 2rem auto 2rem;
+
+  @include tablets {
+    margin-top: 3rem;
+  }
 }
 footer {
   width: 100%;
@@ -85,6 +87,8 @@ section {
   margin-top: 6rem;
   padding: 3rem;
   border-radius: 30px;
+  -webkit-box-shadow: 3px 3px 9px 0px #000000;
+  box-shadow: 3px 3px 9px 0px #000000;
 }
 button {
   cursor: pointer;

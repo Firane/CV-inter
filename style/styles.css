@@ -28,9 +28,7 @@ body {
   background-color: #cccccc;
   background-repeat: repeat;
   margin: 0 auto;
-  margin-top: 1rem;
-  max-width: 1400px;
-  width: 90%;
+  max-width: 1200px;
   overflow-x: hidden;
 }
 @media only screen and (max-width: 480px) {
@@ -60,6 +58,12 @@ h2 {
 main,
 header {
   margin: auto 2rem auto 2rem;
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  main,
+  header {
+    margin-top: 3rem;
+  }
 }
 
 footer {
@@ -100,6 +104,7 @@ section {
   margin-top: 6rem;
   padding: 3rem;
   border-radius: 30px;
+  box-shadow: 3px 3px 9px 0px #000000;
 }
 
 button {
@@ -210,7 +215,7 @@ button {
     margin: 0rem 0rem -10.5rem 0rem;
   }
   100% {
-    margin: 0rem 0rem 0rem 0rem;
+    margin: 3rem 0rem 0rem 0rem;
   }
 }
 @keyframes menuFade {
@@ -223,7 +228,7 @@ button {
 }
 @keyframes menuFadeTablets {
   0% {
-    margin: 0rem 0rem 0rem 0rem;
+    margin: 3rem 0rem 0rem 0rem;
   }
   100% {
     margin: 0rem 0rem -10.5rem 0rem;
@@ -264,6 +269,23 @@ header {
   left: 0px;
   margin: 0px;
   box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.8);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  header {
+    position: relative;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 812px) {
+  header {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 480px) {
+  header {
+    position: relative;
+  }
 }
 
 .nav {
@@ -279,7 +301,6 @@ header {
     -moz-column-gap: 3rem;
     column-gap: 3rem;
     flex-wrap: wrap;
-    row-gap: 3rem;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 812px) {
@@ -288,7 +309,7 @@ header {
     -moz-column-gap: 3rem;
     column-gap: 3rem;
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 0rem;
   }
 }
 @media only screen and (min-width: 813px) and (max-width: 1024px) {
@@ -297,7 +318,7 @@ header {
     -moz-column-gap: 3rem;
     column-gap: 3rem;
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 0rem;
     width: 70%;
     margin: 0 auto;
   }
@@ -405,7 +426,6 @@ header {
     margin: 0rem 0rem -15rem 0rem;
     justify-content: space-between;
     flex-direction: row;
-    margin-top: 0px !important;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -593,7 +613,7 @@ header {
     margin: 0rem 0rem -10.5rem 0rem;
   }
   100% {
-    margin: 0rem 0rem 0rem 0rem;
+    margin: 3rem 0rem 0rem 0rem;
   }
 }
 @keyframes menuFade {
@@ -606,7 +626,7 @@ header {
 }
 @keyframes menuFadeTablets {
   0% {
-    margin: 0rem 0rem 0rem 0rem;
+    margin: 3rem 0rem 0rem 0rem;
   }
   100% {
     margin: 0rem 0rem -10.5rem 0rem;
@@ -668,18 +688,18 @@ header {
 .carrousel > button {
   font-size: 4rem;
   position: absolute;
-  border: 1px solid #0b3140;
-  background: #ba5624;
+  background: none;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   aspect-ratio: 1/1;
 }
-.carrousel > button:hover {
-  background: hsl(20, 70%, 60%);
-}
 .carrousel > button > i {
-  color: #eeede9;
+  color: #0b3140;
+}
+.carrousel > button > i:hover {
+  color: #ba5624;
 }
 .carrousel > button.right {
   top: 50%;
@@ -721,6 +741,7 @@ header {
   align-items: center;
   -moz-column-gap: 5rem;
   column-gap: 5rem;
+  margin-top: 10rem;
 }
 @media only screen and (max-width: 480px) {
   .introducing {
@@ -837,6 +858,7 @@ header {
 }
 
 .skills {
+  padding: 1.5rem;
   background: #eeede9;
 }
 .skills > div {
@@ -910,19 +932,29 @@ header {
 }
 .skills__content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
+  flex-wrap: wrap;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 1rem;
+  align-items: center;
 }
 @media only screen and (max-width: 480px) {
   .skills__content {
     width: 98%;
   }
 }
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  .skills__content {
+    justify-content: space-around;
+  }
+}
 .skills__content__langages {
   border-radius: 20px;
-  width: 45%;
   height: 200px;
   background: #ba5624;
+  width: 360px;
 }
 .skills__content__langages__header {
   display: flex;
@@ -965,26 +997,53 @@ header {
 .skills__content__langages__list {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  height: 70%;
+}
+@media only screen and (max-width: 480px) {
+  .skills__content__langages__list {
+    flex-wrap: wrap;
+    height: unset;
+  }
 }
 .skills__content__langages__list > div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+@media only screen and (max-width: 480px) {
+  .skills__content__langages__list > div {
+    width: 45%;
+    justify-content: center;
+  }
+}
 .skills__content__langages__list > div > img {
-  width: 60%;
+  width: 53px;
   margin-top: 1rem;
+}
+@media only screen and (max-width: 480px) {
+  .skills__content__langages__list > div > img {
+    width: 28px;
+  }
 }
 .skills__content__langages__list > div > div {
   color: #eeede9;
   font-size: 1.2rem;
   margin-top: 0.5rem;
 }
+@media only screen and (max-width: 480px) {
+  .skills__content__langages__list > div > div {
+    font-size: 0.8rem;
+  }
+}
 .skills__content__tools {
   border-radius: 20px;
-  width: 45%;
   height: 200px;
   background: #0b3140;
+  width: 360px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 .skills__content__tools__header {
   display: flex;
@@ -1027,24 +1086,53 @@ header {
 .skills__content__tools__list {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  height: 70%;
+}
+@media only screen and (max-width: 480px) {
+  .skills__content__tools__list {
+    flex-wrap: wrap;
+    height: unset;
+  }
 }
 .skills__content__tools__list > div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+@media only screen and (max-width: 480px) {
+  .skills__content__tools__list > div {
+    width: 45%;
+    justify-content: center;
+  }
+}
 .skills__content__tools__list > div > img {
-  width: 60%;
+  width: 53px;
   margin-top: 1rem;
+}
+@media only screen and (max-width: 480px) {
+  .skills__content__tools__list > div > img {
+    width: 28px;
+  }
 }
 .skills__content__tools__list > div > div {
   color: #eeede9;
   font-size: 1.2rem;
   margin-top: 0.5rem;
 }
+@media only screen and (max-width: 480px) {
+  .skills__content__tools__list > div > div {
+    font-size: 0.8rem;
+  }
+}
 
 .experience {
   background: #eeede9;
+}
+@media only screen and (max-width: 480px) {
+  .experience {
+    padding: 3rem 1.6rem 3rem 1.6rem;
+  }
 }
 .experience > div {
   display: flex;
@@ -1091,6 +1179,7 @@ header {
   margin-bottom: 1.5rem;
 }
 .experience__content__dropdowns {
+  margin-top: 1rem;
   overflow: hidden;
   padding-right: 7px;
   position: relative;
@@ -1175,10 +1264,41 @@ header {
   align-items: center;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
+  row-gap: 2rem;
+}
+@media only screen and (max-width: 480px) {
+  .experience__content__dropdowns__bottom__container__images {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 812px) {
+  .experience__content__dropdowns__bottom__container__images {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  .experience__content__dropdowns__bottom__container__images {
+    flex-direction: column;
+  }
 }
 .experience__content__dropdowns__bottom__container__images > img {
   width: 45%;
   border-radius: 20px;
+}
+@media only screen and (max-width: 480px) {
+  .experience__content__dropdowns__bottom__container__images > img {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 812px) {
+  .experience__content__dropdowns__bottom__container__images > img {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  .experience__content__dropdowns__bottom__container__images > img {
+    width: 80%;
+  }
 }
 .experience__content__dropdowns__bottom__container__images > img:hover {
   cursor: zoom-in;
@@ -1195,6 +1315,22 @@ header {
   border-radius: 50px;
   box-shadow: 0px 0px 6px 0px #000000;
   text-shadow: 0px 0px 5px black;
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  .experience__content__dropdowns__bottom__container > a {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 812px) {
+  .experience__content__dropdowns__bottom__container > a {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .experience__content__dropdowns__bottom__container > a {
+    width: 100%;
+    border-radius: 15px;
+  }
 }
 .experience__content__dropdowns__bottom__container > a:hover {
   background: hsl(20, 70%, 60%);
@@ -1346,11 +1482,41 @@ header {
   column-gap: 2rem;
   display: flex;
 }
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 812px) {
+  .about {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about {
+    flex-direction: column;
+  }
+}
 .about__textcontent {
   display: flex;
   flex-direction: column;
   width: 70%;
   justify-content: space-around;
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  .about__textcontent {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 812px) {
+  .about__textcontent {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about__textcontent {
+    width: 100%;
+  }
 }
 .about__textcontent > h2 {
   text-align: left;
@@ -1405,7 +1571,7 @@ header {
 }
 @media only screen and (min-width: 813px) and (max-width: 1024px) {
   .about__textcontent__content {
-    width: 80%;
+    width: 100%;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 812px) {
@@ -1415,6 +1581,21 @@ header {
 }
 .about__textcontent__content__description {
   text-align: justify;
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  .about__illustration {
+    display: none;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 812px) {
+  .about__illustration {
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about__illustration {
+    display: none;
+  }
 }
 .about__illustration > img {
   width: 100%;
@@ -1434,6 +1615,67 @@ header {
   .about__illustration > img {
     margin-top: 3.5rem;
   }
+}
+.about__illustrationMobile {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+@media only screen and (min-width: 813px) and (max-width: 1024px) {
+  .about__illustrationMobile {
+    display: flex;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 812px) {
+  .about__illustrationMobile {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about__illustrationMobile {
+    display: flex;
+  }
+}
+.about__illustrationMobile > div {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+.about__illustrationMobile__dotsecondary {
+  background: #0b3140;
+  margin-top: -2rem;
+}
+@media only screen and (max-width: 480px) {
+  .about__illustrationMobile__dotsecondary {
+    margin-top: -1rem;
+  }
+}
+.about__illustrationMobile__dottertiary {
+  background: #ba5624;
+  margin-top: 4rem;
+}
+@media only screen and (max-width: 480px) {
+  .about__illustrationMobile__dottertiary {
+    margin-top: 2rem;
+  }
+}
+.about__illustrationMobile > i {
+  font-size: 2rem;
+}
+@media only screen and (max-width: 480px) {
+  .about__illustrationMobile > i {
+    font-size: 1.5rem;
+  }
+}
+.about__illustrationMobile > i.fa-cat {
+  color: #ba5624;
+}
+.about__illustrationMobile > i.fa-lightbulb {
+  color: #ba5624;
+}
+.about__illustrationMobile > i.fa-film {
+  color: #ba5624;
 }
 
 footer {
@@ -1475,6 +1717,9 @@ footer {
   color: #eeede9;
   font-size: 2rem;
 }
+.footer__icons > a > i:hover {
+  color: #ba5624;
+}
 .footer__icons > button {
   cursor: pointer;
   margin: 0;
@@ -1490,6 +1735,9 @@ footer {
 .footer__icons > button > i {
   color: #eeede9;
   font-size: 1.7rem;
+}
+.footer__icons > button > i:hover {
+  color: #ba5624;
 }
 
 .madeby {
