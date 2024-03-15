@@ -1599,7 +1599,6 @@ header {
 }
 .about__illustration > img {
   width: 100%;
-  border-radius: 50px;
 }
 @media only screen and (max-width: 480px) {
   .about__illustration > img {
