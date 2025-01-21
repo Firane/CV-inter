@@ -1,0 +1,759 @@
+@import "../Utils/animations";
+@import "../Utils/variables";
+@import "../Utils/mixins";
+
+// -------------------------------------   Out of bounds stuffs   -------------------------------------
+
+.reset {
+  width: 0%;
+}
+
+.confetti {
+  height: 10px;
+  width: 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+}
+
+.carrousel {
+  max-width: 1400px;
+  max-height: 90%;
+  text-align: center;
+  display: none;
+  position: fixed;
+  top: 15%;
+  width: 80%;
+  left: 10%;
+  z-index: 3;
+  padding: 2rem;
+  border-radius: 15px;
+  & > button {
+    font-size: 4rem;
+    position: absolute;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    > i {
+      color: $color-secondary;
+      &:hover {
+        color: $color-tertiary;
+      }
+    }
+    &.right {
+      top: 50%;
+      right: -10%;
+      transform: translate(-50%, -50%);
+    }
+    &.left {
+      top: 50%;
+      left: -10%;
+      transform: translate(50%, -50%);
+    }
+    &.cross {
+      font-size: 3rem;
+      top: -40px;
+      right: -40px;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0);
+      border: none;
+      & > i {
+        color: #000000;
+      }
+      &:hover {
+        & > i {
+          color: red;
+        }
+      }
+    }
+  }
+  &__image {
+    position: relative;
+    & > img {
+      -webkit-box-shadow: 0px 0px 28px 0px #000000;
+      box-shadow: 0px 0px 28px 0px #000000;
+      max-width: 100%;
+      border-radius: 10px;
+      max-height: 70vh;
+    }
+  }
+}
+
+// -------------------------------------   Introduce   -------------------------------------
+
+.introducing {
+  background: $color-primary;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5rem;
+  column-gap: 5rem;
+  margin-top: 10rem;
+  @include smartphone {
+    flex-direction: column;
+    margin-top: 2.5rem;
+  }
+  @include tablets {
+    flex-direction: column;
+    margin-top: 0rem;
+  }
+  @include landscapeSmartphone {
+    flex-direction: column;
+    margin-top: 2.5rem;
+  }
+  &__content {
+    width: 70%;
+    @include smartphone {
+      width: 98%;
+    }
+    @include tablets {
+      width: 95%;
+    }
+    @include landscapeSmartphone {
+      width: 90%;
+    }
+    &__title {
+      font-size: 3.3rem;
+      position: relative;
+      @include tablets {
+        margin-top: 2rem;
+      }
+      &__bonjour {
+        color: $color-tertiary;
+        font-family: "Fjalla One", sans-serif;
+        font-size: 4rem;
+      }
+      &__emote {
+        padding-bottom: 0.3rem;
+        font-size: 3.3rem;
+        display: inline-block;
+        transform-origin: bottom right;
+        -webkit-animation: rotateThisHand 1.2s ease-in-out infinite;
+        animation: rotateThisHand 1.2s ease-in-out infinite;
+        position: relative;
+        bottom: 7px;
+      }
+    }
+    &__profession {
+      color: $color-primary;
+      background: $color-secondary;
+      font-size: 2.2rem;
+      display: inline-block;
+      margin: 0;
+      padding: 0rem 1rem 0rem 0.3rem;
+    }
+    &__description {
+      font-size: 1.8rem;
+      margin-top: 1rem;
+      &__languages {
+        color: $color-tertiary;
+        font-weight: 600;
+      }
+    }
+  }
+  &__illustration {
+    min-width: 350px;
+    max-width: 30%;
+    position: relative;
+    @include smartphone {
+      width: 98%;
+      margin-top: 2rem;
+    }
+    @include tablets {
+      margin-top: 3rem;
+    }
+    @include landscapeSmartphone {
+      margin-top: 2rem;
+    }
+    &:hover {
+      cursor: -webkit-grab;
+      cursor: grab;
+    }
+    & > img {
+      width: 100%;
+      transform: rotate(30deg);
+      @include smartphone {
+        transform: rotate(0deg);
+      }
+      @include landscapeSmartphone {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+// -------------------------------------   Skills   -------------------------------------
+
+.skills {
+  padding: 1.5rem;
+  background: $color-primary;
+  & > div {
+    display: flex;
+    flex-direction: row-reverse;
+    -moz-column-gap: 4rem;
+    column-gap: 4rem;
+    font-size: 1.35rem;
+    @include smartphone {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include tablets {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include landscapeSmartphone {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__title {
+    margin-top: 0;
+    text-align: left;
+    @include smartphone {
+      text-align: center;
+    }
+    @include tablets {
+      text-align: center;
+    }
+    @include landscapeSmartphone {
+      text-align: center;
+    }
+    &__emojis {
+      @include smartphone {
+        display: block;
+      }
+      @include penEmojisBreakpoint {
+        display: block;
+      }
+    }
+    &__pen {
+      display: inline-block;
+      -webkit-animation: moveThisPen 4s both ease-in-out infinite;
+      animation: moveThisPen 4s both ease-in-out infinite;
+      & > span {
+        display: inline-block;
+        -webkit-animation: shakeThisPen 0.2s both ease-in-out infinite;
+        animation: shakeThisPen 0.2s both ease-in-out infinite;
+        transform-origin: top right;
+        &.animation__paused {
+          -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    align-items: center;
+    @include smartphone {
+      width: 98%;
+    }
+    @include tablets {
+      justify-content: space-around;
+    }
+    &__langages {
+      border-radius: 20px;
+      height: 200px;
+      background: $color-tertiary;
+      width: 360px;
+      @include window($color-tertiary, 70%, 60%);
+    }
+    &__tools {
+      border-radius: 20px;
+      height: 200px;
+      background: $color-secondary;
+      width: 360px;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      @include window($color-secondary, 50%, 25%);
+    }
+  }
+}
+
+// -------------------------------------   Experience   -------------------------------------
+
+.experience {
+  background: $color-primary;
+  @include smartphone {
+    padding: 3rem 1.6rem 3rem 1.6rem;
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 5rem;
+    column-gap: 5rem;
+    justify-content: space-between;
+    @include smartphone {
+      flex-direction: column;
+    }
+    @include tablets {
+      flex-direction: column;
+    }
+    @include landscapeSmartphone {
+      flex-direction: column;
+    }
+  }
+  &__content {
+    width: 65%;
+    font-size: 1.35rem;
+    @include smartphone {
+      width: 98%;
+    }
+    @include tablets {
+      width: 75%;
+    }
+    @include landscapeSmartphone {
+      width: 85%;
+    }
+    & > p {
+      margin-bottom: 1.5rem;
+    }
+    &__dropdowns {
+      margin-top: 1rem;
+      overflow: hidden;
+      padding-right: 7px;
+      position: relative;
+      &__top {
+        -webkit-box-shadow: 3px 3px 2px 0px #000000;
+        box-shadow: 3px 3px 2px 0px #000000;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 3rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 2;
+        margin-top: 0rem;
+        background: $color-secondary;
+
+        & > h3 {
+          margin-left: 1.5rem;
+          color: $color-primary;
+        }
+        & > button {
+          border-radius: 50%;
+          margin-right: 2rem;
+          height: 40px;
+          width: 40px;
+          padding: 0;
+          border: 1px solid $color-primary;
+          position: relative;
+          background: $color-primary;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          aspect-ratio: 1 / 1;
+          cursor: pointer;
+          &:hover {
+            & > i {
+              color: brighter-color($color-secondary, 50%, 25%);
+            }
+          }
+          & > i {
+            text-align: center;
+            font-size: 2rem;
+            color: $color-secondary;
+            background: $color-primary;
+            border-radius: 50%;
+            text-align: center;
+            &.rotated {
+              animation: rotateThisArrow 0.5s cubic-bezier(0, 0, 0.02, 0.96)
+                forwards;
+            }
+            &.default {
+              animation: rotateThisArrowBack 0.5s cubic-bezier(0, 0, 0.02, 0.96)
+                forwards;
+            }
+          }
+        }
+      }
+      &__bottom {
+        padding: 1rem;
+        padding-top: 1.5rem;
+        -webkit-box-shadow: 3px 3px 2px 0px #000000;
+        box-shadow: 2px 2px 2px 0px #000000;
+        border-radius: 0px 0px 15px 15px;
+        background: brighter-color($color-secondary, 50%, 25%);
+        & > div {
+          color: white;
+        }
+        &.default {
+          display: none;
+        }
+        &__container {
+          display: flex;
+          flex-direction: column;
+          row-gap: 2rem;
+          & > p {
+            color: $color-primary;
+            margin-top: 1rem;
+          }
+          &__images {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            column-gap: 2rem;
+            row-gap: 2rem;
+            @include smartphone {
+              flex-direction: column;
+            }
+            @include landscapeSmartphone {
+              flex-direction: column;
+            }
+            @include tablets {
+              flex-direction: column;
+            }
+            & > img {
+              width: 45%;
+              border-radius: 20px;
+              @include smartphone {
+                width: 90%;
+              }
+              @include landscapeSmartphone {
+                width: 90%;
+              }
+              @include tablets {
+                width: 80%;
+              }
+              &:hover {
+                cursor: zoom-in;
+              }
+            }
+          }
+          & > a {
+            text-align: center;
+            background: $color-tertiary;
+            width: 30%;
+            margin: 0 auto;
+            margin-top: 2rem;
+            color: $color-primary;
+            padding: 0.8rem;
+            font-size: 1.6rem;
+            border-radius: 50px;
+            -webkit-box-shadow: 0px 0px 6px 0px #000000;
+            box-shadow: 0px 0px 6px 0px #000000;
+            text-shadow: 0px 0px 5px black;
+            @include tablets {
+              width: 50%;
+            }
+            @include landscapeSmartphone {
+              width: 80%;
+            }
+            @include smartphone {
+              width: 100%;
+              border-radius: 15px;
+            }
+            &:hover {
+              background: brighter-color($color-tertiary, 70%, 60%);
+            }
+          }
+        }
+      }
+    }
+  }
+  &__illustration {
+    @include smartphone {
+      margin-top: 2rem;
+      width: 98%;
+    }
+    @include tablets {
+      margin-top: 3rem;
+    }
+    @include landscapeSmartphone {
+      margin-top: 2.5rem;
+    }
+
+    &__attackscontainer {
+      margin-bottom: 0.1rem;
+      background: white;
+      padding: 0.3rem;
+      border: 3px $color-black-gameboy solid;
+      border-radius: 3px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      @include smartphone {
+        width: 98%;
+      }
+      &__buttonscontainer {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 0.5rem;
+        & > button {
+          height: 26px;
+          width: 49%;
+          font-family: "VT323", monospace;
+          font-size: 1.2rem;
+          background: white;
+          color: black;
+          display: flex;
+          justify-content: center;
+          -moz-column-gap: 0.3rem;
+          column-gap: 0.3rem;
+          align-items: center;
+          border: 2px outset $color-black-gameboy;
+          & > i {
+            display: none;
+          }
+          &:hover {
+            background: #a9a9a9;
+            & > i {
+              display: inline;
+              color: black;
+              -webkit-animation: blink 0.8s both ease-in-out infinite;
+              animation: blink 0.8s both ease-in-out infinite;
+            }
+          }
+        }
+      }
+      &__textused {
+        color: black;
+        font-family: "VT323", monospace;
+        display: none;
+        margin-left: 0.5rem;
+        text-align: left;
+        font-size: 1.35rem;
+      }
+      &__effects {
+        color: black;
+        font-family: "VT323", monospace;
+        display: none;
+        text-align: left;
+        margin-left: 0.5rem;
+        font-size: 1.35rem;
+      }
+    }
+    &__expcontainer {
+      background: $color-black-gameboy;
+      position: relative;
+      width: 300px;
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: 4px solid $color-black-gameboy;
+      @include smartphone {
+        width: 98%;
+      }
+      &.blinking {
+        -webkit-animation: blinkThisXpBar 0.35s both infinite;
+        animation: blinkThisXpBar 0.35s both infinite;
+      }
+      & > h3 {
+        background: rgb(150, 155, 92);
+        background: linear-gradient(
+          180deg,
+          rgba(150, 155, 92, 1) 0%,
+          rgba(236, 223, 3, 1) 56%
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+        margin: 0;
+        font-family: "VT323", monospace;
+        font-size: 1.5rem;
+      }
+      &__bar {
+        border-radius: 3px;
+        background: #cccaa7;
+        width: 200px;
+        height: 12px;
+        position: relative;
+        &__blue {
+          position: relative;
+          background: #5abedf;
+          border-radius: 3px;
+          width: 0%;
+          height: 100%;
+          z-index: 2;
+        }
+        &__separators {
+          display: flex;
+          justify-content: space-evenly;
+          position: absolute;
+          top: 0px;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+          &__element {
+            position: relative;
+            background: #adb693;
+            height: 100%;
+            width: 2px;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+// -------------------------------------   About   -------------------------------------
+
+.about {
+  background: $color-primary;
+  -moz-column-gap: 2rem;
+  column-gap: 2rem;
+  display: flex;
+  @include tablets {
+    flex-direction: column;
+  }
+  @include landscapeSmartphone {
+    flex-direction: column;
+  }
+  @include smartphone {
+    flex-direction: column;
+  }
+  &__textcontent {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-around;
+    @include tablets {
+      width: 100%;
+    }
+    @include landscapeSmartphone {
+      width: 100%;
+    }
+    @include smartphone {
+      width: 100%;
+    }
+    & > h2 {
+      text-align: left;
+      @include smartphone {
+        text-align: center;
+      }
+      @include tablets {
+        text-align: center;
+      }
+      @include landscapeSmartphone {
+        text-align: center;
+      }
+    }
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      text-align: right;
+      -moz-column-gap: 3rem;
+      column-gap: 3rem;
+      @include smartphone {
+        flex-direction: column;
+      }
+      @include tablets {
+        flex-direction: column;
+      }
+      @include landscapeSmartphone {
+        flex-direction: column;
+      }
+    }
+    &__content {
+      font-size: 1.15rem;
+      line-height: 1.7rem;
+      @include smartphone {
+        width: 98%;
+      }
+      @include tablets {
+        width: 100%;
+      }
+      @include landscapeSmartphone {
+        width: 85%;
+      }
+      &__description {
+        text-align: justify;
+      }
+    }
+  }
+  &__illustration {
+    @include tablets {
+      display: none;
+    }
+    @include landscapeSmartphone {
+      display: none;
+    }
+    @include smartphone {
+      display: none;
+    }
+    & > img {
+      width: 100%;
+      @include smartphone {
+        margin-top: 3rem;
+      }
+      @include tablets {
+        margin-top: 4rem;
+      }
+      @include landscapeSmartphone {
+        margin-top: 3.5rem;
+      }
+    }
+  }
+  &__illustrationMobile {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5rem;
+    @include tablets {
+      display: flex;
+    }
+    @include landscapeSmartphone {
+      display: flex;
+    }
+    @include smartphone {
+      display: flex;
+    }
+    & > div {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+    }
+    &__dotsecondary {
+      background: $color-secondary;
+      margin-top: -2rem;
+      @include smartphone {
+        margin-top: -1rem;
+      }
+    }
+    &__dottertiary {
+      background: $color-tertiary;
+      margin-top: 4rem;
+      @include smartphone {
+        margin-top: 2rem;
+      }
+    }
+    & > i {
+      font-size: 2rem;
+      @include smartphone {
+        font-size: 1.5rem;
+      }
+      &.fa-cat {
+        color: $color-tertiary;
+      }
+      &.fa-lightbulb {
+        color: $color-tertiary;
+      }
+      &.fa-film {
+        color: $color-tertiary;
+      }
+    }
+  }
+}

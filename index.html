@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CV Interactif réalisé par Gaël Querharo"
+    />
+    <title>CV interactif - Gaël Querharo</title>
+    <script
+      src="https://kit.fontawesome.com/caa96f4471.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Marcellus&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="websiteContainer">
+      <header>
+        <nav class="nav">
+          <div class="nav__titleAndButton">
+            <div class="nav__titleAndButton__name" id="name">
+              Gaël
+              <span class="nav__titleAndButton__name__lastName">Querharo.</span>
+            </div>
+            <button
+              type="button"
+              class="nav__titleAndButton__lines"
+              aria-label="nav-btn"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+          <div class="nav__links">
+            <div class="nav__links__content">
+              <a
+                href="https://firanegq.com/#compétences"
+                id="skills"
+                class="nav__links__content__clickable"
+                >Compétences</a
+              >
+              <a
+                href="https://firanegq.com/#expériences"
+                id="experiences"
+                class="nav__links__content__clickable"
+                >Expériences</a
+              >
+              <a
+                href="https://firanegq.com/#Apropos"
+                id="about"
+                class="nav__links__content__clickable"
+                >A propos</a
+              >
+              <a
+                href="https://firanegq.com/#contact"
+                class="nav__links__content__clickable"
+                >Contactez moi</a
+              >
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="carrousel" id="carrousel">
+        <button class="left" id="carrouselLeft">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="cross" id="carrouselCross">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </button>
+        <button class="right" id="carrouselRight">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="carrousel__image" id="carrouselImageContainer"></div>
+      </div>
+      <main id="main">
+        <section class="introducing">
+          <div class="introducing__content">
+            <h1 class="introducing__content__title">
+              <span class="introducing__content__title__bonjour">Bonjour,</span>
+              <br />
+              Je suis Gaël
+              <span class="introducing__content__title__emote">👋</span>
+            </h1>
+            <p class="introducing__content__profession">Dev Web Junior</p>
+            <p class="introducing__content__description">
+              Jeune diplomé d'un parcours d'intégrateur web. 💻 <br />J'ai une
+              expérience dans la réalisation d'applications web via
+              <span class="introducing__content__description__languages"
+                >HTML / CSS / JS / Node.js / React</span
+              >. Je cherche à m'améliorer et à me professionnaliser.
+            </p>
+          </div>
+          <div class="introducing__illustration" id="hatcontainer">
+            <img
+              src="./images/diplome2.png"
+              alt="Toque de diplomé"
+              id="party"
+            />
+          </div>
+        </section>
+        <section class="skills" id="compétences">
+          <h2 class="skills__title">
+            Mes <span class="orange__title">compétences_</span>
+            <span class="skills__title__emojis"
+              >📃<span class="skills__title__pen"
+                ><span id="shaking">🖍️</span></span
+              ></span
+            >
+          </h2>
+          <div>
+            <div class="skills__content">
+              <div class="skills__content__langages">
+                <div class="skills__content__langages__header">
+                  <h3>Langages_</h3>
+                  <div class="skills__content__langages__header__dots">
+                    <div
+                      class="skills__content__langages__header__dots__red"
+                    ></div>
+                    <div
+                      class="skills__content__langages__header__dots__yellow"
+                    ></div>
+                    <div
+                      class="skills__content__langages__header__dots__green"
+                    ></div>
+                  </div>
+                </div>
+                <div class="skills__content__langages__list">
+                  <div class="skills__content__langages__list__html">
+                    <img src="./images/html-5.png" alt="logo HTML5" />
+                    <div>HTML</div>
+                  </div>
+                  <div class="skills__content__langages__list__css">
+                    <img src="./images/css-3.png" alt="logo CSS3" />
+                    <div>CSS</div>
+                  </div>
+                  <div class="skills__content__langages__list__javascript">
+                    <img src="./images/java-script.png" alt="logo javascript" />
+                    <div>Javascript</div>
+                  </div>
+                </div>
+              </div>
+              <div class="skills__content__tools">
+                <div class="skills__content__tools__header">
+                  <h3>Outils</h3>
+                  <div class="skills__content__tools__header__dots">
+                    <div
+                      class="skills__content__tools__header__dots__red"
+                    ></div>
+                    <div
+                      class="skills__content__tools__header__dots__yellow"
+                    ></div>
+                    <div
+                      class="skills__content__tools__header__dots__green"
+                    ></div>
+                  </div>
+                </div>
+                <div class="skills__content__tools__list">
+                  <div class="skills__content__tools__list__sass">
+                    <img src="./images/sass.png" alt="logo Sass" />
+                    <div>Sass</div>
+                  </div>
+                  <div class="skills__content__tools__list__nodejs">
+                    <img src="./images/node-js.png" alt="logo NodeJS" />
+                    <div>NodeJS</div>
+                  </div>
+                  <div class="skills__content__tools__list__react">
+                    <img src="./images/react.png" alt="logo react" />
+                    <div>React</div>
+                  </div>
+                  <div class="skills__content__tools__list__github">
+                    <img src="./images/github.png" alt="logo github" />
+                    <div>Github</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="experience" id="expériences">
+          <h2>Mes <span class="orange__title">projets_</span></h2>
+          <div>
+            <div class="experience__content">
+              <p>
+                Tout au long de mon parcours
+                <span class="orange__word">Openclassrooms</span>, j'ai été
+                évalué sur <span class="orange__word">6 projets</span>, portant
+                sur des compétences différentes :
+              </p>
+              <div class="experience__content__dropdowns">
+                <div class="experience__content__dropdowns__top">
+                  <h3 class="experience__content__dropdown__name">Booki_</h3>
+                  <button
+                    type="button"
+                    class="experience__content__dropdown__btn"
+                  >
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                  </button>
+                </div>
+                <div class="experience__content__dropdowns__bottom default">
+                  <div
+                    class="experience__content__dropdowns__bottom__container"
+                  >
+                    <p>
+                      Site de location immobilière, single page,
+                      <span class="orange__word">desktop first</span>.<br />
+                      <br />
+                      Challenge : HTML, CSS,
+                      <span class="orange__word">responsive</span>.
+                    </p>
+                    <div
+                      class="experience__content__dropdowns__bottom__container__images"
+                    >
+                      <img
+                        src="./images/booki1.png"
+                        alt="Capture d'écran de mon premier projet : booki"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                      <img
+                        src="./images/booki2.png"
+                        alt="Capture d'écran de mon premier projet : booki"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                    </div>
+                    <a href="https://firane.github.io/PJ1/">Voir ce projet</a>
+                  </div>
+                </div>
+              </div>
+              <div class="experience__content__dropdowns">
+                <div class="experience__content__dropdowns__top">
+                  <h3 class="experience__content__dropdown__name">Ohmyfood_</h3>
+                  <button
+                    type="button"
+                    class="experience__content__dropdown__btn"
+                  >
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                  </button>
+                </div>
+                <div class="experience__content__dropdowns__bottom default">
+                  <div
+                    class="experience__content__dropdowns__bottom__container"
+                  >
+                    <p>
+                      Application web type restaurant,
+                      <span class="orange__word">mobile first</span>.<br />
+                      <br />
+                      Challenge : Maitrise de
+                      <span class="orange__word">Sass</span> et Animations.
+                    </p>
+                    <div
+                      class="experience__content__dropdowns__bottom__container__images"
+                    >
+                      <img
+                        src="./images/ohmyfood1.png"
+                        alt="Capture d'écran de mon deuxième projet : ohmyfood"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                      <img
+                        src="./images/ohmyfood2.png"
+                        alt="Capture d'écran de mon deuxième projet : ohmyfood"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                    </div>
+                    <a href="https://firane.github.io/P3-Ohmyfood-GQ/"
+                      >Voir ce projet</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="experience__content__dropdowns">
+                <div class="experience__content__dropdowns__top">
+                  <h3 class="experience__content__dropdown__name">
+                    La panthere_
+                  </h3>
+                  <button
+                    type="button"
+                    class="experience__content__dropdown__btn"
+                  >
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                  </button>
+                </div>
+                <div class="experience__content__dropdowns__bottom default">
+                  <div
+                    class="experience__content__dropdowns__bottom__container"
+                  >
+                    <p>
+                      Restructuration d'un site existant.<br /><br />
+                      Challenge : Analyse, avec rapport, d'un plan de
+                      restructuration visant à mettre à jour un site en terme
+                      d'accessibilité, ainsi qu'un gros travail sur une
+                      optimisation <span class="orange__word"> SEO</span>.
+                    </p>
+                    <div
+                      class="experience__content__dropdowns__bottom__container__images"
+                    >
+                      <img
+                        src="./images/lapanthere1.png"
+                        alt="Capture d'écran de mon troisieme projet : la panthere"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                      <img
+                        src="./images/lapanthere2.png"
+                        alt="Capture d'écran de mon troisieme projet : la panthere"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                    </div>
+                    <a href="https://github.com/Firane/La__panthere__final"
+                      >Voir ce projet</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="experience__content__dropdowns">
+                <div class="experience__content__dropdowns__top">
+                  <h3 class="experience__content__dropdown__name">Kanap_</h3>
+                  <button
+                    type="button"
+                    class="experience__content__dropdown__btn"
+                  >
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                  </button>
+                </div>
+                <div class="experience__content__dropdowns__bottom default">
+                  <div
+                    class="experience__content__dropdowns__bottom__container"
+                  >
+                    <p>
+                      Site d'e-commerce.<br />
+                      <br />
+                      Challenge : <span class="orange__word">Javascript</span>
+                      vanilla, gestion du DOM, fetch du JSON, localstorage,
+                      fonctions etc.
+                    </p>
+                    <div
+                      class="experience__content__dropdowns__bottom__container__images"
+                    >
+                      <img
+                        src="./images/kanap1.png"
+                        alt="Capture d'écran de mon quatrième projet : Kanap"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                      <img
+                        src="./images/kanap2.png"
+                        alt="Capture d'écran de mon quatrième projet : Kanap"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                    </div>
+                    <a href="https://github.com/Firane/Kanap-Firane"
+                      >Voir ce projet</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="experience__content__dropdowns">
+                <div class="experience__content__dropdowns__top">
+                  <h3 class="experience__content__dropdown__name">
+                    Piiquante_
+                  </h3>
+                  <button
+                    type="button"
+                    class="experience__content__dropdown__btn"
+                  >
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                  </button>
+                </div>
+                <div class="experience__content__dropdowns__bottom default">
+                  <div
+                    class="experience__content__dropdowns__bottom__container"
+                  >
+                    <p>
+                      Website permettant d'échanger des recettes de sauces.<br />
+                      <br />
+                      Challenge : <span class="orange__word">NodeJS</span>,
+                      express, dotenv, multer, mongodb, JSON web Token.
+                    </p>
+                    <div
+                      class="experience__content__dropdowns__bottom__container__images"
+                    >
+                      <img
+                        src="./images/piiquante1.png"
+                        alt="Capture d'écran de mon cinquième projet : Piiquante"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                      <img
+                        src="./images/piiquante2.png"
+                        alt="Capture d'écran de mon cinquième projet : Piiquante"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                    </div>
+                    <a href="https://github.com/Firane/P6-Piiquante-main"
+                      >Voir ce projet</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="experience__content__dropdowns">
+                <div class="experience__content__dropdowns__top">
+                  <h3 class="experience__content__dropdown__name">Kasa_</h3>
+                  <button
+                    type="button"
+                    class="experience__content__dropdown__btn"
+                  >
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                  </button>
+                </div>
+                <div class="experience__content__dropdowns__bottom default">
+                  <div
+                    class="experience__content__dropdowns__bottom__container"
+                  >
+                    <p>
+                      Application de location immobilière.<br /><br />
+                      Challenge : <span class="orange__word">React</span>, JSX,
+                      props, hooks.
+                    </p>
+                    <div
+                      class="experience__content__dropdowns__bottom__container__images"
+                    >
+                      <img
+                        src="./images/kasa1.png"
+                        alt="Capture d'écran de mon sixieme projet : kasa"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                      <img
+                        src="./images/kasa2.png"
+                        alt="Capture d'écran de mon sixieme projet : kasa"
+                        class="experience__content__dropdowns__bottom__container__images__img"
+                      />
+                    </div>
+                    <a href="https://github.com/Firane/P7---Kasa"
+                      >Voir ce projet</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="experience__illustration">
+              <div class="experience__illustration__attackscontainer">
+                <div
+                  class="experience__illustration__attackscontainer__buttonscontainer"
+                >
+                  <button type="button" id="attackHtml" value="html">
+                    <i class="fa-solid fa-caret-right"></i> HTML
+                  </button>
+                  <button type="button" id="attackCss" value="css">
+                    <i class="fa-solid fa-caret-right"></i> CSS
+                  </button>
+                  <button
+                    type="button"
+                    id="attackJavascript"
+                    value="javascript"
+                  >
+                    <i class="fa-solid fa-caret-right"></i> Javascript
+                  </button>
+                  <button type="button" id="attackTrempette" value="trempette">
+                    <i class="fa-solid fa-caret-right"></i> Trempette
+                  </button>
+                </div>
+                <div
+                  class="experience__illustration__attackscontainer__textused"
+                ></div>
+                <div
+                  class="experience__illustration__attackscontainer__effects"
+                ></div>
+              </div>
+              <div class="experience__illustration__expcontainer" id="xpbar">
+                <h3>EXP</h3>
+                <div class="experience__illustration__expcontainer__bar">
+                  <div
+                    class="experience__illustration__expcontainer__bar__blue"
+                    id="bluebar"
+                  ></div>
+                  <div
+                    class="experience__illustration__expcontainer__bar__separators"
+                  >
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                    <div
+                      class="experience__illustration__expcontainer__bar__separators__element"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about" id="Apropos">
+          <div class="about__textcontent">
+            <h2 class="about__textcontent__title">
+              A propos de <span class="orange__title">moi_</span>
+            </h2>
+            <div>
+              <div class="about__textcontent__content">
+                <p class="about__textcontent__content__description">
+                  Un flash-back s'impose pour comprendre ma récente
+                  reconversion...
+                </p>
+                <br />
+                <p class="about__textcontent__content__description">
+                  Après un <span class="orange__word">BAC PRO SEN</span> obtenu
+                  en 2011, j'ai pendant longtemps cherché du travail dans la
+                  <span class="orange__word">maintenance informatique</span>
+                  sans jamais trouver plus que des périodes d'immersion. Étant
+                  sous-diplômé, et vivant dans une zone de sous-emploi dans
+                  l'informatique, ma recherche d'emploi se déroulait évidemment,
+                  mal. Il m'est donc venu à l'idée de me
+                  <span class="orange__word">spécialiser</span>, et
+                  d'approfondir ma passion, toujours présente, pour le monde de
+                  l'informatique, en me formant à un nouveau métier. Après une
+                  période de réflexion, en prenant en compte mon intérêt depuis
+                  très jeune pour <span class="orange__word">le web</span>, et
+                  celui pour la technologie, j'ai finalement trouvé un parcours
+                  pour me former dans le
+                  <span class="orange__word">développement web</span>.
+                </p>
+                <br />
+                <p class="about__textcontent__content__description">
+                  Trentenaire d'origine bretonne (côtes d'armor), je suis un
+                  féru de <span class="orange__word">jeux-vidéo</span>, de
+                  <span class="orange__word">séries d'animation japonaise</span
+                  >. Je passe aussi beaucoup de temps à regarder du
+                  <span class="orange__word">contenu web</span>, souvent relié
+                  aux deux éléments cités juste avant, sur les réseaux sociaux
+                  (twitch, youtube). J'ai sinon des intérêts, plus mineurs, pour
+                  la <span class="orange__word">musique</span> et le
+                  <span class="orange__word">cinéma</span>. Je suis également
+                  propriétaire d'un chat, un
+                  <span class="orange__word">british shorthair</span> plus
+                  exactement, j'aime beaucoup ces petits félins. 🐈
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="about__illustration">
+            <img
+              src="./images/a_propos.png"
+              alt="Logo d'ordinateur, d'une ampoule, icone reseau, logo chat, logo cinema, logo manette"
+            />
+          </div>
+          <div class="about__illustrationMobile">
+            <div class="about__illustrationMobile__dottertiary"></div>
+            <i class="fa-solid fa-cat"></i>
+            <div class="about__illustrationMobile__dotsecondary"></div>
+            <i class="fa-solid fa-computer"></i>
+            <div class="about__illustrationMobile__dottertiary"></div>
+            <i class="fa-solid fa-lightbulb"></i>
+            <div class="about__illustrationMobile__dotsecondary"></div>
+            <i class="fa-solid fa-gamepad"></i>
+            <div class="about__illustrationMobile__dottertiary"></div>
+            <i class="fa-solid fa-film"></i>
+            <div class="about__illustrationMobile__dotsecondary"></div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="footer" id="contact">
+          <div class="footer__icons">
+            <a href="https://twitter.com/Fyranegq"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <button type="button" id="tel" aria-label="Telephone">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+            <a href="https://www.linkedin.com/in/gael-querharo-b0ba1b161/">
+              <i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="mailto:gael.querharo@gmail.com" aria-label="email"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </div>
+          <div class="madeby">
+            Site entièrement réalisé par Gaël Querharo, avec HTML5, CSS3 et
+            Javascript
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

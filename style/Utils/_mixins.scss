@@ -1,0 +1,94 @@
+@mixin smartphone {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin landscapeSmartphone {
+  @media only screen and (min-width: 481px) and (max-width: 812px) {
+    @content;
+  }
+}
+@mixin tablets {
+  @media only screen and (min-width: 813px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin penEmojisBreakpoint {
+  @media only screen and (min-width: 695px) and (max-width: 841px) {
+    @content;
+  }
+}
+
+@mixin dots {
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+}
+
+@mixin window($color, $saturation, $lightning) {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px 20px 0px 0px;
+    height: 30%;
+    background: brighter-color($color, $saturation, $lightning);
+    & > h3 {
+      font-size: 2rem;
+      font-family: "Fjalla One", sans-serif;
+      margin-left: 1rem;
+      color: $color-primary;
+    }
+    &__dots {
+      display: flex;
+      margin-right: 1rem;
+      column-gap: 0.5rem;
+      &__red {
+        @include dots;
+        background: #e82727;
+      }
+      &__yellow {
+        @include dots;
+        background: #e8b527;
+      }
+      &__green {
+        @include dots;
+        background: #3ae827;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+    @include smartphone {
+      flex-wrap: wrap;
+      height: unset;
+    }
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include smartphone {
+        width: 45%;
+        justify-content: center;
+      }
+      & > img {
+        width: 53px;
+        margin-top: 1rem;
+        @include smartphone {
+          width: 28px;
+        }
+      }
+      & > div {
+        color: $color-primary;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        @include smartphone {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

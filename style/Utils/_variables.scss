@@ -1,0 +1,21 @@
+$color-primary: #eeede9;
+$color-secondary: #0b3140;
+$color-tertiary: #ba5624;
+$color-background: #cccccc;
+$color-black-gameboy: #202926;
+
+@function darken-color($color) {
+  $hue: hue($color);
+  $sat: 80%;
+  $light: 35%;
+  $brighter: hsl($hue, $sat, $light);
+  @return $darken;
+}
+
+@function brighter-color($color, $saturation, $lighting) {
+  $hue: hue($color);
+  $sat: $saturation;
+  $light: $lighting;
+  $brighter: hsl($hue, $sat, $light);
+  @return $brighter;
+}

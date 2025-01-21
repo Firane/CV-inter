@@ -1,0 +1,68 @@
+@import "../Utils/variables";
+@import "../Utils/mixins";
+
+footer {
+  margin-top: 10rem;
+  background: $color-secondary;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  @include smartphone {
+    margin-top: 4rem;
+  }
+  @include tablets {
+    margin-top: 6rem;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  &__icons {
+    text-align: center;
+    display: flex;
+    -moz-column-gap: 1rem;
+    column-gap: 1rem;
+    & > i {
+      color: $color-primary;
+      font-size: 2rem;
+    }
+    & > a {
+      & > i {
+        color: $color-primary;
+        font-size: 2rem;
+        &:hover {
+          color: $color-tertiary;
+        }
+      }
+    }
+    & > button {
+      cursor: pointer;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      border: none;
+      color: $color-primary;
+      font-size: 1.2rem;
+      & > i {
+        color: $color-primary;
+        font-size: 1.7rem;
+        &:hover {
+          color: $color-tertiary;
+        }
+      }
+    }
+  }
+}
+
+.madeby {
+  color: $color-primary;
+  font-size: 0.9rem;
+  font-style: italic;
+}
